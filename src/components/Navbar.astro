@@ -1,0 +1,135 @@
+---
+const reservationText = encodeURIComponent("Hello La Kera, I would like to reserve a table.");
+const whatsappUrl = `https://wa.me/919500978712?text=${reservationText}`;
+---
+
+<header class="sticky top-0 z-50 w-full border-b border-zinc-800/80 bg-zinc-950/90 backdrop-blur-md transition-all">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+    <!-- Brand Logo -->
+    <a href="#" class="group flex flex-col focus:outline-none" aria-label="La Kera Coastal Kitchen Home">
+      <span class="font-serif text-2xl font-bold tracking-wider text-amber-500 transition-colors group-hover:text-amber-400 sm:text-3xl">
+        LA KERA
+      </span>
+      <span class="text-[10px] font-semibold uppercase tracking-[0.25em] text-zinc-400">
+        Coastal Kitchen
+      </span>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden items-center gap-8 md:flex" aria-label="Primary Navigation">
+      <a href="#menu" class="text-sm font-medium text-zinc-300 transition-colors hover:text-amber-400">
+        Menu
+      </a>
+      <a href="#story" class="text-sm font-medium text-zinc-300 transition-colors hover:text-amber-400">
+        Our Story
+      </a>
+      <a href="#location" class="text-sm font-medium text-zinc-300 transition-colors hover:text-amber-400">
+        Location
+      </a>
+      <a href="#timings" class="text-sm font-medium text-zinc-300 transition-colors hover:text-amber-400">
+        Timings
+      </a>
+    </nav>
+
+    <!-- Header CTA -->
+    <div class="hidden items-center gap-4 sm:flex">
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-xs font-semibold text-emerald-400 transition-all hover:border-emerald-500/60 hover:bg-emerald-500/20 active:scale-95"
+      >
+        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.353.101.173.449.742.964 1.201.662.591 1.221.774 1.394.861.173.086.275.072.376-.044.101-.116.433-.506.549-.679.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.13.332.203.043.072.043.419-.101.824z"/>
+        </svg>
+        <span>Reserve a Table</span>
+      </a>
+    </div>
+
+    <!-- Mobile Hamburger Button -->
+    <div class="flex items-center gap-2 md:hidden">
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-2 text-emerald-400 hover:bg-emerald-500/20"
+        aria-label="Book a table via WhatsApp"
+      >
+        <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.353.101.173.449.742.964 1.201.662.591 1.221.774 1.394.861.173.086.275.072.376-.044.101-.116.433-.506.549-.679.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.13.332.203.043.072.043.419-.101.824z"/>
+        </svg>
+      </a>
+
+      <button
+        id="mobile-menu-button"
+        type="button"
+        class="inline-flex items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900 p-2.5 text-zinc-300 hover:text-white focus:outline-none"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        aria-label="Toggle navigation menu"
+      >
+        <svg id="hamburger-icon" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="close-icon" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu" class="hidden border-b border-zinc-800 bg-zinc-950/98 px-4 pt-2 pb-6 md:hidden">
+    <div class="flex flex-col space-y-3 pt-2">
+      <a href="#menu" class="mobile-nav-link rounded-lg px-3 py-2.5 text-base font-medium text-zinc-200 hover:bg-zinc-900 hover:text-amber-400">
+        Menu
+      </a>
+      <a href="#story" class="mobile-nav-link rounded-lg px-3 py-2.5 text-base font-medium text-zinc-200 hover:bg-zinc-900 hover:text-amber-400">
+        Our Story
+      </a>
+      <a href="#location" class="mobile-nav-link rounded-lg px-3 py-2.5 text-base font-medium text-zinc-200 hover:bg-zinc-900 hover:text-amber-400">
+        Location & Directions
+      </a>
+      <a href="#timings" class="mobile-nav-link rounded-lg px-3 py-2.5 text-base font-medium text-zinc-200 hover:bg-zinc-900 hover:text-amber-400">
+        Operating Timings
+      </a>
+      <div class="pt-3">
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-950/50"
+        >
+          <span>Book a Table via WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+  if (button && menu && hamburgerIcon && closeIcon) {
+    button.addEventListener('click', () => {
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!isExpanded));
+      menu.classList.toggle('hidden');
+      hamburgerIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        button.setAttribute('aria-expanded', 'false');
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      });
+    });
+  }
+</script>

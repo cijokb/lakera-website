@@ -1,0 +1,120 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "La Kera Restaurant | Authentic Coastal & Malabar Dining",
+  description = "Experience authentic Malabar & Coastal dining at La Kera. Fresh sea catch, Thalassery dum biryani, cold-pressed coconut oil, and traditional clay-pot curries in an intimate dark-luxe ambiance."
+} = Astro.props;
+
+const canonicalUrl = "https://lakera.co.in";
+
+const restaurantSchema = {
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "La Kera Restaurant",
+  "image": "https://lakera.co.in/images/og-image.jpg",
+  "@id": "https://lakera.co.in",
+  "url": "https://lakera.co.in",
+  "telephone": "+919500978712",
+  "priceRange": "₹₹",
+  "servesCuisine": [
+    "Coastal South Indian",
+    "Malabar",
+    "Kerala Seafood",
+    "Thalassery Biryani"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Main Coastal Road, Harbor District",
+    "addressLocality": "Coastal Kitchen",
+    "addressRegion": "Kerala",
+    "postalCode": "682001",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 9.9312,
+    "longitude": 76.2673
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "11:30",
+      "closes": "15:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "19:00",
+      "closes": "23:00"
+    }
+  ],
+  "acceptsReservations": "True",
+  "hasMenu": "https://lakera.co.in/#menu"
+};
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="theme-color" content="#09090b" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="La Kera Restaurant" />
+    <meta property="og:locale" content="en_IN" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalUrl} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+
+    <!-- Google Fonts Preconnect for Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,600..900;1,600..900&display=swap" rel="stylesheet" />
+
+    <!-- JSON-LD Local SEO Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(restaurantSchema)} />
+  </head>
+  <body class="min-h-screen bg-zinc-950 text-zinc-100 antialiased selection:bg-amber-500 selection:text-zinc-950">
+    <slot />
+  </body>
+</html>

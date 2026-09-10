@@ -1,0 +1,80 @@
+---
+const reservationText = encodeURIComponent(
+  "Hello La Kera! I'd like to reserve a table. Please let me know availability for [Date & Time] for [No. of Guests]."
+);
+const whatsappUrl = `https://wa.me/919500978712?text=${reservationText}`;
+---
+
+<section class="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-28">
+  <!-- Ambient background glow effects -->
+  <div class="pointer-events-none absolute -top-24 left-1/2 -z-10 h-96 w-full -translate-x-1/2 max-w-4xl opacity-30 blur-3xl">
+    <div class="h-full w-full bg-gradient-to-tr from-amber-600/40 via-amber-500/20 to-emerald-600/30"></div>
+  </div>
+  <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(#27272a_1px,transparent_1px)] [background-size:24px_24px] opacity-20"></div>
+
+  <div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+    <!-- Pulsating Status Badge -->
+    <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-950/40 px-3.5 py-1.5 text-xs font-medium text-emerald-300 shadow-sm backdrop-blur-sm sm:text-sm">
+      <span class="relative flex h-2 w-2">
+        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+        <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+      </span>
+      <span>Open Daily • 11:30 AM – 11:00 PM</span>
+    </div>
+
+    <!-- Main Headline -->
+    <h1 class="mt-6 text-balance font-serif text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+      Authentic <span class="bg-gradient-to-r from-amber-400 via-amber-200 to-amber-500 bg-clip-text text-transparent">Coastal & Malabar</span> Dining
+    </h1>
+
+    <!-- Descriptive Subtitle -->
+    <p class="mx-auto mt-6 max-w-2xl text-pretty text-base text-zinc-300 sm:text-lg md:text-xl">
+      Experience the soul of the Malabar coast. Fresh Arabian Sea catch, fragrant Kaima dum biryanis, cold-pressed coconut oil, and heirloom spices slow-cooked in traditional clay pots.
+    </p>
+
+    <!-- Call to Actions -->
+    <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-5">
+      <a
+        href="#menu"
+        class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-amber-500 px-6 py-3.5 text-sm font-semibold text-zinc-950 shadow-lg shadow-amber-500/20 transition-all hover:bg-amber-400 hover:shadow-amber-500/30 active:scale-98 sm:w-auto sm:text-base"
+      >
+        <span>Explore Menu</span>
+        <svg class="h-4 w-4 transition-transform group-hover:translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </a>
+
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex w-full items-center justify-center gap-2.5 rounded-xl border border-emerald-500/40 bg-zinc-900/90 px-6 py-3.5 text-sm font-semibold text-emerald-400 shadow-md backdrop-blur-sm transition-all hover:border-emerald-500 hover:bg-emerald-950/40 hover:text-emerald-300 active:scale-98 sm:w-auto sm:text-base"
+      >
+        <svg class="h-5 w-5 fill-emerald-400" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.353.101.173.449.742.964 1.201.662.591 1.221.774 1.394.861.173.086.275.072.376-.044.101-.116.433-.506.549-.679.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.13.332.203.043.072.043.419-.101.824z"/>
+        </svg>
+        <span>Book a Table via WhatsApp</span>
+      </a>
+    </div>
+
+    <!-- Quick Highlights Bar -->
+    <div class="mt-14 grid grid-cols-2 gap-3 border-t border-zinc-800/80 pt-8 sm:grid-cols-4 sm:gap-4">
+      <div class="flex flex-col items-center rounded-xl bg-zinc-900/60 p-3.5 border border-zinc-800/50">
+        <span class="text-xs uppercase font-medium text-zinc-400">Daily Catch</span>
+        <span class="mt-1 text-sm font-bold text-amber-400 sm:text-base">100% Fresh Sea Fish</span>
+      </div>
+      <div class="flex flex-col items-center rounded-xl bg-zinc-900/60 p-3.5 border border-zinc-800/50">
+        <span class="text-xs uppercase font-medium text-zinc-400">Heirloom Recipes</span>
+        <span class="mt-1 text-sm font-bold text-amber-400 sm:text-base">Clay-Pot Cooking</span>
+      </div>
+      <div class="flex flex-col items-center rounded-xl bg-zinc-900/60 p-3.5 border border-zinc-800/50">
+        <span class="text-xs uppercase font-medium text-zinc-400">Pure Ingredients</span>
+        <span class="mt-1 text-sm font-bold text-amber-400 sm:text-base">Cold-Pressed Oils</span>
+      </div>
+      <div class="flex flex-col items-center rounded-xl bg-zinc-900/60 p-3.5 border border-zinc-800/50">
+        <span class="text-xs uppercase font-medium text-zinc-400">Fast Ordering</span>
+        <span class="mt-1 text-sm font-bold text-emerald-400 sm:text-base">Instant WhatsApp Desk</span>
+      </div>
+    </div>
+  </div>
+</section>

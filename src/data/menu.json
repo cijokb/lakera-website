@@ -2,199 +2,243 @@
   {
     "id": "karimeen-pollichathu",
     "name": "Karimeen Pollichathu",
-    "desc": "Pearl spot fish marinated in freshly ground Malabar spices, wrapped in tender banana leaves and slow-cooked over a griddle.",
+    "desc": "Pearl spot fish marinated in freshly ground Malabar spices, wrapped in charred banana leaves and slow-cooked on iron griddle.",
     "price": 540,
     "category": "Coastal Seafood",
     "isVeg": false,
-    "badge": "Chef's Special"
+    "badge": "Chef's Special",
+    "image": "https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=600&q=80",
+    "tags": ["Banana Leaf", "Pearl Spot", "Smoky"]
   },
   {
     "id": "prawns-ghee-roast",
     "name": "Tiger Prawns Ghee Roast",
-    "desc": "Juicy ocean tiger prawns pan-tossed in artisanal Kundapura ghee roast masala, curry leaves, and crushed peppercorns.",
+    "desc": "Juicy ocean tiger prawns pan-tossed in artisanal Kundapura ghee roast masala, fresh curry leaves, and crushed Tellicherry pepper.",
     "price": 490,
     "category": "Coastal Seafood",
     "isVeg": false,
-    "badge": "Bestseller"
+    "badge": "Bestseller",
+    "image": "https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=600&q=80",
+    "tags": ["Ocean Prawns", "Pure Ghee", "Spicy"]
   },
   {
     "id": "alleppey-fish-curry",
     "name": "Alleppey Meen Curry",
-    "desc": "Fresh catch of the day gently simmered in raw mangoes, shallots, and creamy spiced coconut milk.",
+    "desc": "Fresh catch of the day gently simmered with raw mangoes, tender shallots, and rich hand-squeezed spiced coconut milk in a clay pot.",
     "price": 460,
     "category": "Coastal Seafood",
     "isVeg": false,
-    "badge": null
+    "badge": "Clay Pot",
+    "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=600&q=80",
+    "tags": ["Raw Mango", "Coconut Milk", "Mild Tangy"]
   },
   {
     "id": "crab-roast",
     "name": "Nadan Nandu Roast",
-    "desc": "Whole blue sea crab sautéed with roasted coconut flakes, dark peppercorns, and caramelized Malabar shallots.",
+    "desc": "Whole blue sea crab sautéed with roasted coconut slivers, dark pepper gravy, and caramelized Malabar shallots.",
     "price": 520,
     "category": "Coastal Seafood",
     "isVeg": false,
-    "badge": "Must Try"
+    "badge": "Must Try",
+    "image": "https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?auto=format&fit=crop&w=600&q=80",
+    "tags": ["Blue Sea Crab", "Dry Roast", "Fiery"]
   },
   {
     "id": "squid-pepper-fry",
     "name": "Squid Pepper Fry (Koonthal)",
-    "desc": "Tender coastal calamari rings tossed with crushed Tellicherry black peppercorns and crisped curry leaves.",
+    "desc": "Tender coastal calamari rings tossed with freshly ground Tellicherry black peppercorns, garlic, and crisped curry leaves.",
     "price": 420,
     "category": "Coastal Seafood",
     "isVeg": false,
-    "badge": null
+    "badge": null,
+    "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80",
+    "tags": ["Calamari", "Black Pepper", "Crisp"]
   },
   {
     "id": "thalassery-mutton-biryani",
     "name": "Thalassery Mutton Dum Biryani",
-    "desc": "Fragrant short-grain Kaima rice layered with tender hill-mutton, slow dum-cooked with fried onions, cashews, and sultanas.",
+    "desc": "Fragrant short-grain aged Kaima rice layered with tender hill-mutton, slow dum-cooked with golden ghee, fried onions, cashews, and sultanas.",
     "price": 480,
     "category": "Biryani & Rice",
     "isVeg": false,
-    "badge": "Bestseller"
+    "badge": "Bestseller",
+    "image": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
+    "tags": ["Kaima Rice", "Dum Cooked", "Hill Mutton"]
   },
   {
     "id": "thalassery-chicken-biryani",
     "name": "Thalassery Chicken Dum Biryani",
-    "desc": "Signature Malabar-style dum biryani made with indigenous Kaima rice, country chicken, ghee, and roasted aromatics.",
+    "desc": "Signature Malabar-style dum biryani made with indigenous Kaima rice, country chicken, pure ghee, and roasted Malabar aromatics.",
     "price": 380,
     "category": "Biryani & Rice",
     "isVeg": false,
-    "badge": "Chef's Special"
+    "badge": "Chef's Special",
+    "image": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
+    "tags": ["Kaima Rice", "Aromatic", "Classic"]
   },
   {
     "id": "kaima-ghee-rice",
     "name": "Kaima Ghee Rice & Nadan Dal",
-    "desc": "Delicate aged Kaima rice tempered in pure ghee, cardamom, cloves, and served alongside tempered yellow coastal dal.",
+    "desc": "Delicate aged Kaima rice tempered in pure ghee, cardamom, cloves, and served alongside tempered yellow coastal dal with garlic tadka.",
     "price": 260,
     "category": "Biryani & Rice",
     "isVeg": true,
-    "badge": null
+    "badge": null,
+    "image": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
+    "tags": ["Pure Ghee", "Comfort Food", "Mild"]
   },
   {
     "id": "malabar-prawns-biryani",
     "name": "Malabar Coastal Prawns Biryani",
-    "desc": "Fresh Arabian Sea prawns layered with spiced dum masala and aromatic ghee-scented Kaima rice.",
+    "desc": "Fresh Arabian Sea tiger prawns layered with spiced dum masala, caramelized shallots, and fragrant saffron-scented Kaima rice.",
     "price": 490,
     "category": "Biryani & Rice",
     "isVeg": false,
-    "badge": null
+    "badge": null,
+    "image": "https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=600&q=80",
+    "tags": ["Sea Prawns", "Seafood Dum", "Fragrant"]
   },
   {
     "id": "kerala-beef-fry",
     "name": "Kerala Beef Dry Fry (B.D.F)",
-    "desc": "Slow-roasted tender cuts infused with coconut slivers, garlic, ginger, and coarse black pepper.",
+    "desc": "Slow-roasted tender cuts infused with toasted coconut slivers, garlic, ginger, and coarse Tellicherry black pepper.",
     "price": 390,
     "category": "Grills & Curries",
     "isVeg": false,
-    "badge": "Bestseller"
+    "badge": "Bestseller",
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+    "tags": ["Toasted Coconut", "Pepper Fry", "Iconic"]
   },
   {
     "id": "nadan-kozhi-roast",
     "name": "Nadan Kozhi Roast",
-    "desc": "Semi-dry chicken preparation slow-cooked with roasted spices, shallot paste, and cold-pressed coconut oil.",
+    "desc": "Semi-dry chicken preparation slow-cooked with freshly pounded roasted spices, shallot paste, and cold-pressed coconut oil.",
     "price": 370,
     "category": "Grills & Curries",
     "isVeg": false,
-    "badge": null
+    "badge": null,
+    "image": "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=600&q=80",
+    "tags": ["Shallot Masala", "Coconut Oil", "Semi-Dry"]
   },
   {
     "id": "mushroom-pepper-roast",
     "name": "Wild Mushroom Pepper Roast",
-    "desc": "Button mushrooms pan-seared with fresh coconut bits, shallots, curry leaves, and stone-ground spices.",
+    "desc": "Fresh button mushrooms pan-seared with golden coconut slivers, shallots, curry leaves, and hand-ground black pepper.",
     "price": 320,
     "category": "Grills & Curries",
     "isVeg": true,
-    "badge": "Veg Delight"
+    "badge": "Veg Delight",
+    "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80",
+    "tags": ["Fresh Mushroom", "Black Pepper", "Pure Veg"]
   },
   {
     "id": "paneer-malabar-kurma",
     "name": "Paneer Malabar Kurma",
-    "desc": "Soft paneer cubes gently simmered in a velvety cashew, fennel, and rich coconut milk reduction.",
+    "desc": "Soft paneer cubes simmered in a velvety cashew, green chili, and thick fresh coconut milk reduction with aromatic spices.",
     "price": 340,
     "category": "Grills & Curries",
     "isVeg": true,
-    "badge": null
+    "badge": null,
+    "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=600&q=80",
+    "tags": ["Velvety Cashew", "Coconut Cream", "Subtle Spice"]
   },
   {
     "id": "varutharacha-chicken-curry",
     "name": "Varutharacha Chicken Curry",
-    "desc": "Traditional preparation with dry-roasted freshly grated coconut, coriander, and native whole spices in a clay pot.",
+    "desc": "Traditional preparation with slow-roasted grated coconut, whole coriander, and native spices ground on granite and simmered in clay pot.",
     "price": 380,
     "category": "Grills & Curries",
     "isVeg": false,
-    "badge": "Chef's Special"
+    "badge": "Chef's Special",
+    "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=600&q=80",
+    "tags": ["Roasted Coconut", "Clay Pot", "Rich Gravy"]
   },
   {
     "id": "malabar-porotta",
     "name": "Layered Malabar Porotta (2 pcs)",
-    "desc": "Classic flaky, multi-layered golden flatbread prepared by artisan parotta masters on hot cast iron.",
+    "desc": "Classic flaky, spiral multi-layered golden flatbread prepared by artisan parotta masters on hot cast iron.",
     "price": 90,
     "category": "Breads & Accompaniments",
     "isVeg": true,
-    "badge": "Essential"
+    "badge": "Essential",
+    "image": "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=600&q=80",
+    "tags": ["Flaky Layers", "Hand-Rolled", "Hot Cast Iron"]
   },
   {
     "id": "kallappam",
     "name": "Palappam / Appam (2 pcs)",
-    "desc": "Crispy lacy-edged fermented rice hoppers with a fluffy, soft pillowy cloud center.",
+    "desc": "Crispy lacy-edged fermented rice hoppers with a fluffy, cloud-soft pillowy center, best paired with curries.",
     "price": 80,
     "category": "Breads & Accompaniments",
     "isVeg": true,
-    "badge": null
+    "badge": null,
+    "image": "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=600&q=80",
+    "tags": ["Lacy Edges", "Fermented Rice", "Traditional"]
   },
   {
     "id": "idiyappam",
     "name": "Steamed Idiyappam (3 pcs)",
-    "desc": "Hand-pressed delicate rice string hoppers steamed fresh to order.",
+    "desc": "Delicate hand-pressed rice string hoppers steamed fresh with gentle coconut essence to order.",
     "price": 85,
     "category": "Breads & Accompaniments",
     "isVeg": true,
-    "badge": null
+    "badge": null,
+    "image": "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=600&q=80",
+    "tags": ["String Hoppers", "Light & Healthy", "Steamed"]
   },
   {
     "id": "coin-porotta",
     "name": "Cocktail Coin Porotta (4 pcs)",
-    "desc": "Miniature bite-sized flaky porottas, perfect for dipping into rich curries.",
+    "desc": "Miniature bite-sized flaky porottas, perfect for dipping into rich fish and meat curries.",
     "price": 110,
     "category": "Breads & Accompaniments",
     "isVeg": true,
-    "badge": null
+    "badge": null,
+    "image": "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=600&q=80",
+    "tags": ["Miniature", "Party Favorite", "Crisp Flaky"]
   },
   {
     "id": "tender-coconut-pudding",
     "name": "Elaneer (Tender Coconut) Pudding",
-    "desc": "Silky, melt-in-the-mouth chilled pudding crafted from fresh coastal tender coconut pulp and water.",
+    "desc": "Silky, melt-in-the-mouth chilled dessert crafted from fresh coastal tender coconut pulp, coconut water, and pure cream.",
     "price": 190,
     "category": "Desserts & Drinks",
     "isVeg": true,
-    "badge": "Must Try"
+    "badge": "Must Try",
+    "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80",
+    "tags": ["Tender Coconut", "Chilled", "Silky Sweet"]
   },
   {
     "id": "ada-pradhaman",
     "name": "Traditional Ada Pradhaman",
-    "desc": "Kerala's celebratory dessert with steamed rice flakes simmered in dark jaggery syrup and thick coconut milk.",
+    "desc": "Kerala's celebratory dessert with steamed rice flakes simmered in rich jaggery syrup, thick coconut milk, and ghee-roasted coconut crisps.",
     "price": 180,
     "category": "Desserts & Drinks",
     "isVeg": true,
-    "badge": "Festive Special"
+    "badge": "Festive Special",
+    "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80",
+    "tags": ["Dark Jaggery", "Coconut Milk", "Celebration"]
   },
   {
     "id": "kulukki-sarbath",
     "name": "Pineapple Chili Kulukki Sarbath",
-    "desc": "Shaken iced refresher with fresh lime, crushed mint, basil seeds, pineapple chunks, and a fiery hint of green chili.",
+    "desc": "Hand-shaken iced refresher with fresh lime, crushed mint, sabja basil seeds, sweet pineapple, and a fiery hint of green chili.",
     "price": 130,
     "category": "Desserts & Drinks",
     "isVeg": true,
-    "badge": "Refreshing"
+    "badge": "Refreshing",
+    "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80",
+    "tags": ["Shaken Iced", "Basil Seeds", "Sweet & Spicy"]
   },
   {
     "id": "malabar-sulaimani",
     "name": "Spiced Malabar Sulaimani",
-    "desc": "Aromatic black tea infused with cardamom, cloves, cinnamon, fresh lemon juice, and wild forest honey.",
+    "desc": "Digestive golden tea steeped with crushed cardamom, cinnamon bark, cloves, fresh lime juice, and wild honey.",
     "price": 80,
     "category": "Desserts & Drinks",
     "isVeg": true,
-    "badge": null
+    "badge": null,
+    "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80",
+    "tags": ["Digestive Tea", "Cardamom & Lime", "Malabar Classic"]
   }
 ]

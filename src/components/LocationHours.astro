@@ -1,57 +1,85 @@
 ---
+import WhatsAppLogo from './icons/WhatsAppLogo.astro';
+import SwiggyLogo from './icons/SwiggyLogo.astro';
+import ZomatoLogo from './icons/ZomatoLogo.astro';
+
+const addressQuery = encodeURIComponent(
+  "120/1, udbav channe gowda complex, SH 35, next to NITESH FOREST HILLS, Seegehalli, Bengaluru, Karnataka 560115"
+);
+const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${addressQuery}`;
+
 const whatsappDeskUrl = `https://wa.me/919500978712?text=${encodeURIComponent(
-  "Hello La Kera! I have an inquiry regarding dining reservations / bulk catering."
+  "Hello La Kera! I would like to inquire about dining reservations at Seegehalli, Bengaluru / bulk catering."
 )}`;
+
+const swiggyUrl = "https://www.swiggy.com/city/bangalore/erivum-puliyum-brookefields-aecs-layout-rest63059";
+const zomatoUrl = "https://www.zomato.com/bangalore/erivum-puliyum-brookefield-bangalore";
 ---
 
-<section id="location" class="scroll-mt-20 py-16 sm:py-24 border-t border-zinc-850">
+<section id="location" class="scroll-mt-20 py-20 lg:py-28 bg-[#f8faf8] dark:bg-[#060f09] border-t border-zinc-200 dark:border-[#278440]/25 transition-colors duration-300">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <!-- Header -->
-    <div class="text-center">
-      <span class="text-xs font-semibold uppercase tracking-widest text-amber-500">Visit & Connect</span>
-      <h2 class="mt-2 font-serif text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-        Location, Timings & Contact
+    <div class="text-center max-w-3xl mx-auto">
+      <div class="inline-flex items-center gap-2">
+        <span class="h-px w-8 bg-[#278440]/60"></span>
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-[#278440] dark:text-[#38b359]">Visit Us in Bengaluru</span>
+        <span class="h-px w-8 bg-[#278440]/60"></span>
+      </div>
+      <h2 class="mt-3 font-serif text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl lg:text-6xl">
+        Location & <span class="green-gradient-text italic font-normal">Service Hours</span>
       </h2>
-      <p class="mx-auto mt-4 max-w-2xl text-pretty text-zinc-400 text-sm sm:text-base">
-        Join us for an intimate coastal dining experience or reach out directly to reserve our private dining room and outdoor catering services.
+      <p class="mt-4 text-pretty text-zinc-600 dark:text-zinc-300 text-sm sm:text-base font-light">
+        Join us at our 3rd floor dining hall in Seegehalli, Bengaluru or order doorstep delivery via Swiggy & Zomato.
       </p>
     </div>
 
     <!-- 3-Column Responsive Grid -->
-    <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-      <!-- Column 1: Address & Directions -->
-      <div class="flex flex-col justify-between rounded-2xl border border-zinc-800 bg-zinc-900/70 p-6 sm:p-8 backdrop-blur-sm">
+    <div class="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
+      <!-- Column 1: Address, Signboard & Directions -->
+      <div class="card-luxury rounded-3xl p-6 sm:p-7 flex flex-col justify-between">
         <div>
-          <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-amber-500/10 text-amber-400">
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
+          <!-- Illuminated Signboard Visual from Brand Guide -->
+          <div class="relative h-44 w-full rounded-2xl overflow-hidden mb-5 border border-zinc-200 dark:border-[#278440]/30 shadow-md">
+            <img
+              src="/images/lakera-signboard.jpg"
+              alt="La Kera Illuminated Circular Signboard in Seegehalli"
+              class="h-full w-full object-cover object-center"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-2.5 left-3">
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-white/95 dark:bg-[#060f09]/90 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#1e6933] dark:text-[#38b359] border border-[#278440]/40 shadow-sm backdrop-blur-md">
+                <span class="h-1.5 w-1.5 rounded-full bg-[#278440]"></span>
+                <span>Look For Our Green Signboard</span>
+              </span>
+            </div>
           </div>
 
-          <h3 class="mt-5 text-xl font-bold text-white">Address & Dining Hall</h3>
-          <p class="mt-3 text-sm leading-relaxed text-zinc-300">
-            <strong class="text-white font-medium">La Kera Restaurant</strong><br />
-            Coastal Kitchen & Private Dining<br />
-            Main Coastal Road, Near Harborside<br />
-            Serving Authentic Malabar Flavours
-          </p>
-          <div class="mt-4 inline-flex items-center gap-1.5 text-xs text-amber-400/90">
+          <h3 class="font-serif text-2xl font-bold text-zinc-900 dark:text-white">The Restaurant</h3>
+          <div class="mt-3 text-xs sm:text-sm leading-relaxed text-zinc-600 dark:text-zinc-300 font-light space-y-1">
+            <p class="text-zinc-900 dark:text-white font-semibold text-base">LA KERA Restaurant</p>
+            <p class="text-[#1e6933] dark:text-[#38b359] font-medium text-xs uppercase tracking-wider">3rd Floor</p>
+            <p>120/1, Udbav Channe Gowda Complex,</p>
+            <p>SH 35, Next to NITESH FOREST HILLS,</p>
+            <p>Seegehalli, Bengaluru, Karnataka 560115</p>
+          </div>
+
+          <div class="mt-4 inline-flex items-center gap-2 text-xs text-[#1e6933] dark:text-[#38b359]">
             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
-            <span>Valet & Street Parking Available</span>
+            <span>Elevator & Dedicated Parking Available</span>
           </div>
         </div>
 
-        <div class="mt-8 pt-6 border-t border-zinc-800">
+        <div class="mt-8 pt-6 border-t border-zinc-200 dark:border-[#278440]/20">
           <a
-            href="https://maps.google.com/?q=La+Kera+Restaurant"
+            href={googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-zinc-800 px-4 py-2.5 text-xs font-semibold text-zinc-200 transition-all hover:bg-zinc-700 hover:text-white"
+            class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#278440] to-[#1e6933] border border-[#38b359]/40 px-4 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-md shadow-[#278440]/25 transition-all hover:brightness-110 active:scale-95"
           >
-            <span>Get Directions on Google Maps</span>
+            <span>Open in Google Maps</span>
             <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
@@ -59,89 +87,115 @@ const whatsappDeskUrl = `https://wa.me/919500978712?text=${encodeURIComponent(
         </div>
       </div>
 
-      <!-- Column 2: Service Hours (with id="timings" anchor) -->
-      <div id="timings" class="scroll-mt-24 flex flex-col justify-between rounded-2xl border border-amber-500/30 bg-zinc-900/90 p-6 sm:p-8 backdrop-blur-sm relative overflow-hidden">
-        <div class="absolute top-0 right-0 h-24 w-24 bg-amber-500/10 blur-2xl pointer-events-none"></div>
+      <!-- Column 2: Service Hours -->
+      <div id="timings" class="scroll-mt-24 card-luxury rounded-3xl p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden">
+        <div class="absolute top-0 right-0 h-32 w-32 bg-[#278440]/10 blur-3xl pointer-events-none"></div>
 
         <div>
           <div class="flex items-center justify-between">
-            <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-amber-500/10 text-amber-400">
+            <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-emerald-600/20 dark:border-[#278440]/40 bg-emerald-50 dark:bg-[#0c1910] text-[#1e6933] dark:text-[#38b359]">
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <span class="rounded-full border border-emerald-500/30 bg-emerald-950/40 px-3 py-1 text-[11px] font-semibold text-emerald-400">
+            <span class="rounded-full border border-[#278440]/30 dark:border-[#278440] bg-emerald-100/60 dark:bg-[#278440]/20 px-3 py-1 text-[11px] font-semibold text-[#1e6933] dark:text-[#38b359]">
               Open All 7 Days
             </span>
           </div>
 
-          <h3 class="mt-5 text-xl font-bold text-white">Service Hours</h3>
+          <h3 class="mt-6 font-serif text-2xl font-bold text-zinc-900 dark:text-white">Daily Dining Hours</h3>
 
-          <div class="mt-4 space-y-4">
-            <div class="rounded-xl bg-zinc-950/60 p-3.5 border border-zinc-800/80">
-              <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-amber-400">
+          <div class="mt-5 space-y-4">
+            <div class="rounded-2xl border border-zinc-200 dark:border-[#278440]/20 bg-zinc-50 dark:bg-[#060f09] p-4">
+              <div class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-[#1e6933] dark:text-[#38b359]">
                 <span>Lunch Session</span>
-                <span class="text-zinc-400">Fresh Catch</span>
+                <span class="text-zinc-500">Fresh Catch & Meals</span>
               </div>
-              <p class="mt-1 text-base font-bold text-white">11:30 AM – 3:30 PM</p>
-              <p class="text-[11px] text-zinc-400 mt-0.5">Last order: 3:00 PM</p>
+              <p class="mt-1 font-serif text-xl font-bold text-zinc-900 dark:text-white">11:30 AM – 3:30 PM</p>
+              <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">Kitchen last order: 3:00 PM</p>
             </div>
 
-            <div class="rounded-xl bg-zinc-950/60 p-3.5 border border-zinc-800/80">
-              <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-amber-400">
+            <div class="rounded-2xl border border-zinc-200 dark:border-[#3A6CB4]/20 bg-zinc-50 dark:bg-[#060f09] p-4">
+              <div class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-[#24529a] dark:text-[#7bb0ff]">
                 <span>Dinner Session</span>
-                <span class="text-zinc-400">Dum Biryanis</span>
+                <span class="text-zinc-500">Dum Biryanis & Porottas</span>
               </div>
-              <p class="mt-1 text-base font-bold text-white">7:00 PM – 11:00 PM</p>
-              <p class="text-[11px] text-zinc-400 mt-0.5">Last order: 10:30 PM</p>
+              <p class="mt-1 font-serif text-xl font-bold text-zinc-900 dark:text-white">7:00 PM – 11:00 PM</p>
+              <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">Kitchen last order: 10:30 PM</p>
             </div>
           </div>
         </div>
 
-        <div class="mt-8 pt-6 border-t border-zinc-800/80">
-          <p class="text-center text-xs text-zinc-400">
-            Reservations recommended for dinner and weekend peak hours.
+        <div class="mt-8 pt-6 border-t border-zinc-200 dark:border-[#278440]/20">
+          <p class="text-center text-xs text-zinc-500 dark:text-zinc-400 font-light">
+            We strongly recommend advance table reservations for dinner and weekend sessions.
           </p>
         </div>
       </div>
 
-      <!-- Column 3: Direct Contact & Catering -->
-      <div class="flex flex-col justify-between rounded-2xl border border-zinc-800 bg-zinc-900/70 p-6 sm:p-8 backdrop-blur-sm">
+      <!-- Column 3: Contact & Online Delivery -->
+      <div class="card-luxury rounded-3xl p-6 sm:p-7 flex flex-col justify-between">
         <div>
-          <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400">
+          <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-emerald-600/20 dark:border-[#278440]/40 bg-emerald-50 dark:bg-[#0c1910] text-[#1e6933] dark:text-[#38b359]">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
           </div>
 
-          <h3 class="mt-5 text-xl font-bold text-white">Contact & Catering</h3>
-          <p class="mt-2 text-sm text-zinc-300 leading-relaxed">
-            Call our hospitality desk for reservations, takeaway orders, or private banquet bookings.
-          </p>
+          <h3 class="mt-6 font-serif text-2xl font-bold text-zinc-900 dark:text-white">Delivery & Helplines</h3>
 
-          <div class="mt-4 rounded-xl bg-zinc-950/60 p-3.5 border border-zinc-800/80">
-            <span class="text-[10px] font-semibold uppercase tracking-wider text-zinc-400">Direct Helpline</span>
+          <!-- Phone number -->
+          <div class="mt-4 rounded-2xl border border-zinc-200 dark:border-[#278440]/20 bg-zinc-50 dark:bg-[#060f09] p-3.5">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">Concierge Desk</span>
             <a
               href="tel:+919500978712"
-              class="mt-1 block text-lg font-bold text-amber-400 hover:text-amber-300 font-mono"
+              class="mt-0.5 block font-mono text-lg font-bold text-[#1e6933] dark:text-[#38b359] hover:underline transition-colors"
             >
               +91 95009 78712
             </a>
           </div>
 
-          <p class="mt-4 text-xs text-zinc-400">
-            <strong class="text-zinc-200">Outdoor Catering:</strong> We curate authentic Sadhya spreads, live Porotta counters, and seafood grills for weddings and corporate gatherings.
-          </p>
+          <!-- Swiggy & Zomato Delivery Buttons -->
+          <div class="mt-4 space-y-2.5">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">Online Food Delivery Apps:</span>
+            
+            <a
+              href={swiggyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group flex w-full items-center justify-between rounded-xl border border-orange-500/40 bg-gradient-to-r from-orange-50 to-orange-100/50 dark:from-[#fc8019]/20 dark:to-[#fc8019]/10 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-orange-700 dark:text-orange-300 hover:bg-[#fc8019] hover:text-white transition-all shadow-sm"
+            >
+              <div class="flex items-center gap-2.5">
+                <SwiggyLogo class="h-4 w-4" />
+                <span>Order on Swiggy</span>
+              </div>
+              <span class="group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
+
+            <a
+              href={zomatoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group flex w-full items-center justify-between rounded-xl border border-rose-500/40 bg-gradient-to-r from-rose-50 to-rose-100/50 dark:from-[#e23744]/20 dark:to-[#e23744]/10 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-rose-700 dark:text-rose-300 hover:bg-[#e23744] hover:text-white transition-all shadow-sm"
+            >
+              <div class="flex items-center gap-2.5">
+                <ZomatoLogo class="h-4 w-4" />
+                <span>Order on Zomato</span>
+              </div>
+              <span class="group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
+          </div>
         </div>
 
-        <div class="mt-8 pt-6 border-t border-zinc-800">
+        <div class="mt-6 pt-5 border-t border-zinc-200 dark:border-[#278440]/20">
           <a
             href={whatsappDeskUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-xs font-semibold text-white shadow-md shadow-emerald-950 transition-all hover:bg-emerald-500 active:scale-98"
+            class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#278440] via-[#2f9c4d] to-[#1e6933] px-4 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-[#278440]/30 transition-all hover:brightness-110 active:scale-98"
           >
-            <span>Message on WhatsApp</span>
+            <WhatsAppLogo class="h-4 w-4" />
+            <span>Message WhatsApp Concierge</span>
           </a>
         </div>
       </div>

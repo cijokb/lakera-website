@@ -7,39 +7,41 @@ interface Props {
 }
 
 const {
-  title = "La Kera Restaurant | Authentic Coastal & Malabar Dining",
-  description = "Experience authentic Malabar & Coastal dining at La Kera. Fresh sea catch, Thalassery dum biryani, cold-pressed coconut oil, and traditional clay-pot curries in an intimate dark-luxe ambiance."
+  title = "La Kera Restaurant | The Real Taste of Kerala | Seegehalli, Bengaluru",
+  description = "Experience authentic Kerala & Malabar coastal dining at La Kera Restaurant, Seegehalli, Bengaluru. Thalassery dum biryani, fresh sea fish curries, and banana-leaf roasts. Order on Swiggy & Zomato."
 } = Astro.props;
 
 const canonicalUrl = "https://lakera.co.in";
+const logoUrl = "https://lakera.co.in/images/lakera-logo-square.png";
 
 const restaurantSchema = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
   "name": "La Kera Restaurant",
-  "image": "https://lakera.co.in/images/og-image.jpg",
+  "image": logoUrl,
   "@id": "https://lakera.co.in",
   "url": "https://lakera.co.in",
   "telephone": "+919500978712",
   "priceRange": "₹₹",
   "servesCuisine": [
+    "Kerala Style",
+    "Malabar Cuisine",
     "Coastal South Indian",
-    "Malabar",
-    "Kerala Seafood",
+    "Seafood",
     "Thalassery Biryani"
   ],
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Main Coastal Road, Harbor District",
-    "addressLocality": "Coastal Kitchen",
-    "addressRegion": "Kerala",
-    "postalCode": "682001",
+    "streetAddress": "3rd Floor, 120/1, Udbav Channe Gowda Complex, SH 35, Next to NITESH FOREST HILLS, Seegehalli",
+    "addressLocality": "Bengaluru",
+    "addressRegion": "Karnataka",
+    "postalCode": "560115",
     "addressCountry": "IN"
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 9.9312,
-    "longitude": 76.2673
+    "latitude": 13.0125,
+    "longitude": 77.7475
   },
   "openingHoursSpecification": [
     {
@@ -72,7 +74,20 @@ const restaurantSchema = {
     }
   ],
   "acceptsReservations": "True",
-  "hasMenu": "https://lakera.co.in/#menu"
+  "hasMenu": "https://lakera.co.in/#menu",
+  "potentialAction": {
+    "@type": "OrderAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://www.swiggy.com/city/bangalore/erivum-puliyum-brookefields-aecs-layout-rest63059",
+      "inLanguage": "en-US",
+      "actionPlatform": [
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/MobileWebPlatform"
+      ]
+    },
+    "deliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModeDirectDownload"
+  }
 };
 ---
 
@@ -82,7 +97,9 @@ const restaurantSchema = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="128x128" href="/images/lakera-logo-square.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/images/lakera-logo-square.png" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- Primary Meta Tags -->
@@ -90,7 +107,7 @@ const restaurantSchema = {
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
-    <meta name="theme-color" content="#09090b" />
+    <meta name="theme-color" content="#278440" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -98,6 +115,7 @@ const restaurantSchema = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content="La Kera Restaurant" />
+    <meta property="og:image" content={logoUrl} />
     <meta property="og:locale" content="en_IN" />
 
     <!-- Twitter -->
@@ -105,16 +123,36 @@ const restaurantSchema = {
     <meta property="twitter:url" content={canonicalUrl} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={logoUrl} />
 
     <!-- Google Fonts Preconnect for Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,600..900;1,600..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
 
     <!-- JSON-LD Local SEO Schema -->
     <script type="application/ld+json" set:html={JSON.stringify(restaurantSchema)} />
+
+    <!-- Theme Detection & Hydration Script (Zero FOUT) -->
+    <script is:inline>
+      (function () {
+        try {
+          const stored = localStorage.getItem('lakera-theme');
+          if (stored === 'light') {
+            document.documentElement.classList.remove('dark');
+          } else if (stored === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else {
+            // Default to dark mode for dining ambiance
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
-  <body class="min-h-screen bg-zinc-950 text-zinc-100 antialiased selection:bg-amber-500 selection:text-zinc-950">
+  <body class="min-h-screen bg-[#f8faf8] dark:bg-[#060f09] text-zinc-900 dark:text-[#f3f4f6] antialiased selection:bg-[#278440] selection:text-white transition-colors duration-200">
     <slot />
   </body>
 </html>

@@ -1,32 +1,182 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
+  :root {
+    --brand-green: #278440;
+    --brand-green-light: #35a554;
+    --brand-blue: #3A6CB4;
+    --brand-blue-light: #5289db;
+  }
+
   html {
     scroll-behavior: smooth;
-    color-scheme: dark;
   }
 
   body {
-    background-color: #09090b;
-    color: #f4f4f5;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f8faf8;
+    color: #111b14;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
 
-  /* Custom scrollbar for dark theme */
+  html.dark body {
+    background-color: #060f09;
+    color: #f3f4f6;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  /* Custom brand scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
   }
   ::-webkit-scrollbar-track {
-    background: #09090b;
+    background: #f1f5f2;
   }
   ::-webkit-scrollbar-thumb {
-    background: #27272a;
+    background: #c3dac8;
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #3f3f46;
+    background: #278440;
   }
+
+  html.dark ::-webkit-scrollbar-track {
+    background: #060f09;
+  }
+  html.dark ::-webkit-scrollbar-thumb {
+    background: #15291b;
+    border-radius: 4px;
+    border: 1px solid rgba(39, 132, 64, 0.25);
+  }
+  html.dark ::-webkit-scrollbar-thumb:hover {
+    background: #278440;
+  }
+}
+
+/* Official Brand Identity Utilities */
+.text-brand-green {
+  color: #278440;
+}
+
+.text-brand-green-light {
+  color: #38b359;
+}
+
+.bg-brand-green {
+  background-color: #278440;
+}
+
+.border-brand-green {
+  border-color: rgba(39, 132, 64, 0.35);
+}
+
+.border-brand-green-strong {
+  border-color: rgba(39, 132, 64, 0.7);
+}
+
+.text-brand-blue {
+  color: #3A6CB4;
+}
+
+.text-brand-blue-light {
+  color: #5d93e6;
+}
+
+.bg-brand-blue {
+  background-color: #3A6CB4;
+}
+
+.border-brand-blue {
+  border-color: rgba(58, 108, 180, 0.35);
+}
+
+/* Gradient accents */
+.green-gradient-bg {
+  background: linear-gradient(135deg, #32964e 0%, #278440 50%, #1b5c2c 100%);
+}
+
+.green-gradient-text {
+  background: linear-gradient(135deg, #1f6b33 0%, #278440 60%, #154722 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html.dark .green-gradient-text {
+  background: linear-gradient(135deg, #6ee795 0%, #38b359 60%, #1f6b33 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Warm Gold Flourishes */
+.text-gold {
+  color: #b48232;
+}
+
+html.dark .text-gold {
+  color: #cfa86e;
+}
+
+.text-gold-light {
+  color: #f5dfbe;
+}
+
+.bg-gold {
+  background-color: #cfa86e;
+}
+
+.border-gold {
+  border-color: rgba(207, 168, 110, 0.35);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #b48232 0%, #996515 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html.dark .gold-gradient-text {
+  background: linear-gradient(135deg, #fce8cc 0%, #cfa86e 50%, #b88a44 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Brand Cards: Light Mode vs Dark Mode */
+.card-luxury {
+  background: #ffffff;
+  border: 1px solid rgba(39, 132, 64, 0.16);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card-luxury:hover {
+  border-color: rgba(39, 132, 64, 0.45);
+  box-shadow: 0 10px 25px -4px rgba(39, 132, 64, 0.12);
+}
+
+html.dark .card-luxury {
+  background: linear-gradient(180deg, rgba(13, 26, 18, 0.9) 0%, rgba(7, 15, 10, 0.98) 100%);
+  border: 1px solid rgba(39, 132, 64, 0.22);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+}
+
+html.dark .card-luxury:hover {
+  border-color: rgba(39, 132, 64, 0.55);
+  box-shadow: 0 14px 40px -10px rgba(39, 132, 64, 0.2);
+}
+
+/* Subtle image overlay vignette */
+.img-vignette {
+  background: linear-gradient(to top, rgba(248, 250, 248, 0.95) 0%, rgba(248, 250, 248, 0.4) 50%, transparent 100%);
+}
+
+html.dark .img-vignette {
+  background: linear-gradient(to top, rgba(6, 15, 9, 0.95) 0%, rgba(6, 15, 9, 0.4) 50%, transparent 100%);
 }

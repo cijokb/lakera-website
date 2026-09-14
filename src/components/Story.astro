@@ -1,78 +1,173 @@
 ---
-const pillars = [
+const craftPillars = [
   {
-    title: "Daily Coastal Catch",
-    description: "We work directly with artisanal coastal fishermen to source Pearl Spot (Karimeen), Tiger Prawns, and Seer Fish every morning—never frozen, always pristine.",
-    tag: "Harbor Fresh",
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />`
+    title: "Morning Harbor Sourcing",
+    tag: "100% Wild Catch",
+    description: "Our fish buyers arrive at coastal boat docks at dawn. We hand-select Karimeen, Tiger Prawns, and Seer Fish directly from artisanal backwater fishermen—never frozen, preserved solely with sea ice.",
+    image: "https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?auto=format&fit=crop&w=800&q=80"
   },
   {
-    title: "Wood-Pressed Coconut Oil",
-    description: "Every curry and roast is cooked in traditional cold-pressed Chekku coconut oil, imparting that unmistakable rich, nutty aroma central to genuine Malabar culinary heritage.",
-    tag: "100% Pure",
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />`
+    title: "Artisanal Chekku Oil",
+    tag: "Wooden Cold-Pressed",
+    description: "Every curry and roast is cooked in single-origin wooden cold-pressed Chekku coconut oil. Its natural nutty fragrance and silky richness form the immutable cornerstone of authentic Malabar kitchens.",
+    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80"
   },
   {
-    title: "Stone-Ground Spice Blends",
-    description: "Tellicherry black peppercorns, roasted coriander seeds, star anise, and whole cardamom are freshly ground on stone mills in small batches to preserve volatile essential oils.",
-    tag: "Handcrafted",
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />`
+    title: "Stone-Ground Aromatics",
+    tag: "Granite Pounded",
+    description: "We don't use factory powdered spices. Whole Tellicherry peppercorns, roasted coriander, star anise, and fresh ginger are hand-ground daily on heavy granite stones to retain aromatic volatility.",
+    image: "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80"
   },
   {
-    title: "Clay-Pot (Manchatti) Simmering",
-    description: "Our signature meen curries and roasts are slow-simmered in seasoned earthen clay pots. The porous clay retains gentle moisture, letting curries mature in taste overnight.",
-    tag: "Slow Food",
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />`
+    title: "Clay-Pot (Manchatti) Braising",
+    tag: "Earthen Slow Cook",
+    description: "Our curries simmer gently inside seasoned earthen clay pots. The porous clay breathes during slow reduction, mellowing sharp spices and letting coastal gravies reach optimal depth of flavor.",
+    image: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=80"
   }
 ];
 ---
 
-<section id="story" class="scroll-mt-20 py-16 sm:py-24 bg-zinc-900/30 border-t border-zinc-850">
+<section id="story" class="scroll-mt-20 py-20 lg:py-28 bg-[#f8faf8] dark:bg-[#060f09] border-t border-zinc-200 dark:border-[#278440]/25 relative transition-colors duration-300">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <!-- Header -->
     <div class="max-w-3xl">
-      <span class="text-xs font-semibold uppercase tracking-widest text-amber-500">Heirloom Tradition</span>
-      <h2 class="mt-2 font-serif text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-        Born on the Backwaters, Perfected in Every Pot
+      <div class="inline-flex items-center gap-2">
+        <span class="h-px w-8 bg-[#278440]/60"></span>
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-[#278440] dark:text-[#38b359]">Heirloom Philosophy & Heritage</span>
+      </div>
+      <h2 class="mt-3 font-serif text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl lg:text-6xl">
+        Rooted in Tradition, <span class="green-gradient-text italic font-normal">Served with Reverence</span>
       </h2>
-      <p class="mt-4 text-pretty text-zinc-300 text-sm sm:text-base leading-relaxed">
-        At La Kera, our philosophy is anchored in age-old coastal hospitality. We don't take shortcuts with commercial gravies or artificial colors—we honor the authentic flavours of Malabar through traditional techniques and uncompromised ingredients.
+      <p class="mt-4 text-pretty text-zinc-600 dark:text-zinc-300 text-sm sm:text-base font-light leading-relaxed">
+        At La Kera, dining is an act of cultural preservation. We refuse shortcuts, commercial thickening agents, and microwave reheating. Everything we serve honors the timeless techniques perfected across generations in Kerala's coastal homes.
       </p>
     </div>
 
-    <!-- 4 Pillars Grid -->
-    <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {pillars.map((pillar) => (
-        <div class="relative flex flex-col justify-between rounded-2xl border border-zinc-800 bg-zinc-900/80 p-6 backdrop-blur-sm transition-all hover:border-amber-500/40 hover:bg-zinc-900">
-          <div>
-            <div class="flex items-center justify-between">
-              <span class="inline-flex rounded-lg bg-amber-500/10 p-2.5 text-amber-400">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" set:html={pillar.icon} />
-              </span>
-              <span class="rounded-md border border-zinc-700 bg-zinc-800 px-2 py-0.5 text-[10px] font-semibold text-zinc-300">
+    <!-- Official Mascot Spotlight Card (Brand Guidelines Page 5) -->
+    <div class="mt-12 rounded-3xl border border-zinc-200 dark:border-[#278440]/40 bg-white dark:bg-gradient-to-r dark:from-[#0c1910] dark:via-[#08150c] dark:to-[#0c1910] p-6 sm:p-10 shadow-xl dark:shadow-2xl relative overflow-hidden transition-colors duration-300">
+      <div class="absolute top-0 right-0 h-64 w-64 bg-[#278440]/10 blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 h-48 w-48 bg-[#3A6CB4]/10 blur-3xl pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
+        <!-- Mascot Artwork Presentation -->
+        <div class="md:col-span-4 flex justify-center">
+          <div class="relative group">
+            <div class="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-[#278440]/40 to-[#3A6CB4]/30 blur-lg opacity-80"></div>
+            <div class="relative h-60 w-60 sm:h-72 sm:w-72 rounded-3xl border-2 border-[#278440] bg-[#278440] p-3 shadow-2xl overflow-hidden flex items-center justify-center">
+              <img
+                src="/images/lakera-logo-square.png"
+                alt="La Kera Mascot - The Cheerful Kerala Server with Cloche"
+                class="h-full w-full object-contain"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Heritage Story & Hospitality Narrative -->
+        <div class="md:col-span-8 flex flex-col justify-center">
+          <div class="inline-flex items-center gap-2">
+            <span class="rounded-full border border-[#278440]/40 bg-emerald-50 dark:bg-[#278440]/15 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#1e6933] dark:text-[#38b359]">
+              The Real Taste of Kerala
+            </span>
+            <span class="rounded-full border border-amber-500/40 bg-amber-50 dark:bg-amber-950/30 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">
+              Heirloom Tradition
+            </span>
+          </div>
+
+          <h3 class="mt-4 font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-zinc-900 dark:text-white">
+            The Cheerful Spirit of Kerala Hospitality
+          </h3>
+
+          <p class="mt-3 text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed font-light">
+            Our emblem embodies the beloved tradition of coastal dining across Malabar. It portrays the quintessential Kerala server ("Chettan") in his iconic attire: a tied headcloth (<em class="text-zinc-900 dark:text-white font-medium">kettumukku</em>), a clean white vest, a shoulder towel (<em class="text-zinc-900 dark:text-white font-medium">thorthu</em>), and his classic checked lungi.
+          </p>
+
+          <p class="mt-2 text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed font-light">
+            Striding briskly forward with a welcoming smile and lifting a cloche dome with aromatic steam rising, he represents our timeless promise: <strong class="text-zinc-900 dark:text-white font-medium">piping-hot food, generous hospitality, and authentic coastal recipes</strong> brought straight from our hearth to your table.
+          </p>
+
+          <!-- 3 Culinary Commitments -->
+          <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3.5 border-t border-zinc-200 dark:border-[#278440]/20 pt-4">
+            <div class="flex items-start gap-2.5">
+              <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#278440]/15 text-[#1e6933] dark:text-[#38b359] text-xs font-bold">✓</span>
+              <div>
+                <p class="text-xs font-semibold text-zinc-900 dark:text-white">Piping-Hot Platter</p>
+                <p class="text-[11px] text-zinc-500 dark:text-zinc-400 leading-snug mt-0.5">Freshly lifted cloche platters served straight from the fire</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#278440]/15 text-[#1e6933] dark:text-[#38b359] text-xs font-bold">✓</span>
+              <div>
+                <p class="text-xs font-semibold text-zinc-900 dark:text-white">Pure Coastal Flavours</p>
+                <p class="text-[11px] text-zinc-500 dark:text-zinc-400 leading-snug mt-0.5">Stone-ground masalas and single-origin cold-pressed coconut oil</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#278440]/15 text-[#1e6933] dark:text-[#38b359] text-xs font-bold">✓</span>
+              <div>
+                <p class="text-xs font-semibold text-zinc-900 dark:text-white">Heartfelt Warmth</p>
+                <p class="text-[11px] text-zinc-500 dark:text-zinc-400 leading-snug mt-0.5">Unhurried service inspired by the generous homes of Kerala</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 Visual Craft Cards -->
+    <div class="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {craftPillars.map((pillar) => (
+        <div class="card-luxury group relative overflow-hidden rounded-3xl transition-all duration-300 flex flex-col justify-between">
+          <!-- Background Image with Dark Gradient -->
+          <div class="relative h-48 w-full overflow-hidden">
+            <img
+              src={pillar.image}
+              alt={pillar.title}
+              class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+
+            <div class="absolute top-3 right-3">
+              <span class="rounded-full border border-[#278440]/50 bg-black/80 backdrop-blur-md px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#38b359]">
                 {pillar.tag}
               </span>
             </div>
+          </div>
 
-            <h3 class="mt-5 text-lg font-bold text-white">
-              {pillar.title}
-            </h3>
+          <!-- Body Content -->
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-xl font-bold text-zinc-900 dark:text-white group-hover:text-[#278440] dark:group-hover:text-[#38b359] transition-colors">
+                {pillar.title}
+              </h3>
 
-            <p class="mt-2 text-xs leading-relaxed text-zinc-400">
-              {pillar.description}
-            </p>
+              <p class="mt-3 text-xs leading-relaxed text-zinc-600 dark:text-zinc-400 font-light">
+                {pillar.description}
+              </p>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-zinc-200 dark:border-[#278440]/20 flex items-center gap-1 text-[11px] font-semibold text-[#1e6933] dark:text-[#38b359]">
+              <span>Generational Recipe</span>
+              <span>→</span>
+            </div>
           </div>
         </div>
       ))}
     </div>
 
     <!-- Quote Banner -->
-    <div class="mt-12 rounded-2xl border border-amber-500/20 bg-gradient-to-r from-amber-500/10 via-zinc-900 to-amber-500/5 p-6 sm:p-8">
-      <blockquote class="text-center font-serif text-base italic text-zinc-200 sm:text-lg">
-        "In Kerala, the hearth is sacred and cooking is an act of communion. Every meal at La Kera is prepared with the same devotion you would find at a Malabar family feast."
+    <div class="mt-16 rounded-3xl border border-zinc-200 dark:border-[#278440]/30 bg-white dark:bg-gradient-to-r dark:from-[#0c1910] dark:via-[#08150c] dark:to-[#0c1910] p-8 sm:p-12 relative overflow-hidden text-center shadow-lg dark:shadow-xl transition-colors duration-300">
+      <div class="absolute -top-12 -left-12 h-36 w-36 bg-[#278440]/10 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-12 -right-12 h-36 w-36 bg-[#3A6CB4]/10 blur-3xl pointer-events-none"></div>
+
+      <span class="font-serif text-4xl text-[#278440]/40 dark:text-[#38b359]/50">“</span>
+      <blockquote class="font-serif text-lg sm:text-2xl italic text-zinc-800 dark:text-zinc-200 max-w-3xl mx-auto leading-relaxed -mt-4">
+        Food in Kerala is not merely sustenance—it is memory, backwater mist, and ancestral hospitality served upon glistening banana leaves.
       </blockquote>
-      <p class="mt-3 text-center text-xs font-semibold uppercase tracking-wider text-amber-400">
-        — The La Kera Culinary Team
+      <p class="mt-4 text-xs font-bold uppercase tracking-[0.25em] text-[#1e6933] dark:text-[#38b359]">
+        — Chef & Custodians of La Kera
       </p>
     </div>
   </div>

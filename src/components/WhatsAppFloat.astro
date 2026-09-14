@@ -1,24 +1,24 @@
 ---
+import WhatsAppLogo from './icons/WhatsAppLogo.astro';
+
 const floatWhatsAppUrl = `https://wa.me/919500978712?text=${encodeURIComponent(
-  "Hello La Kera! I'd like to place an order / book a table."
+  "Hello La Kera! I'd like to book a table / place an order."
 )}`;
 ---
 
-<div class="fixed bottom-5 right-5 z-40 group">
-  <!-- Subtle Pulse Glow Ring -->
-  <span class="absolute -inset-1 rounded-full bg-emerald-500/40 blur-sm group-hover:bg-emerald-400/60 animate-pulse"></span>
+<div class="fixed bottom-6 right-6 z-50 group">
+  <!-- Pulsing Glow Ring -->
+  <span class="absolute -inset-1 rounded-full bg-[#278440]/50 blur-md group-hover:bg-[#278440]/70 animate-pulse"></span>
 
   <!-- Action Pill -->
   <a
     href={floatWhatsAppUrl}
     target="_blank"
     rel="noopener noreferrer"
-    class="relative inline-flex items-center gap-2.5 rounded-full border border-emerald-400/40 bg-gradient-to-r from-emerald-600 to-emerald-500 px-4 py-3 text-xs sm:text-sm font-bold text-white shadow-xl shadow-emerald-950/70 transition-all hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-zinc-950"
-    aria-label="Order or Reserve via WhatsApp (+91 95009 78712)"
+    class="relative inline-flex items-center gap-2.5 rounded-full border border-[#38b359]/60 bg-gradient-to-r from-[#278440] via-[#2f9c4d] to-[#1e6933] px-5 py-3 text-xs sm:text-sm font-bold tracking-wide text-white shadow-2xl shadow-[#278440]/50 transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#278440] focus:ring-offset-2 focus:ring-offset-[#f8faf8] dark:focus:ring-offset-[#060f09]"
+    aria-label="Reserve a table or order on WhatsApp (+91 95009 78712)"
   >
-    <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.353.101.173.449.742.964 1.201.662.591 1.221.774 1.394.861.173.086.275.072.376-.044.101-.116.433-.506.549-.679.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.13.332.203.043.072.043.419-.101.824z"/>
-    </svg>
-    <span class="tracking-wide">WhatsApp Us</span>
+    <WhatsAppLogo class="h-5 w-5" />
+    <span>WhatsApp Concierge</span>
   </a>
 </div>

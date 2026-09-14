@@ -1,69 +1,139 @@
 ---
-const reservationText = encodeURIComponent("Hello La Kera, I would like to reserve a table.");
+import SwiggyLogo from './icons/SwiggyLogo.astro';
+import ZomatoLogo from './icons/ZomatoLogo.astro';
+import WhatsAppLogo from './icons/WhatsAppLogo.astro';
+
+const reservationText = encodeURIComponent("Hello La Kera, I would like to reserve a dining table.");
 const whatsappUrl = `https://wa.me/919500978712?text=${reservationText}`;
+const swiggyUrl = "https://www.swiggy.com/city/bangalore/erivum-puliyum-brookefields-aecs-layout-rest63059";
+const zomatoUrl = "https://www.zomato.com/bangalore/erivum-puliyum-brookefield-bangalore";
 ---
 
-<header class="sticky top-0 z-50 w-full border-b border-zinc-800/80 bg-zinc-950/90 backdrop-blur-md transition-all">
-  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-    <!-- Brand Logo -->
-    <a href="#" class="group flex flex-col focus:outline-none" aria-label="La Kera Coastal Kitchen Home">
-      <span class="font-serif text-2xl font-bold tracking-wider text-amber-500 transition-colors group-hover:text-amber-400 sm:text-3xl">
-        LA KERA
-      </span>
-      <span class="text-[10px] font-semibold uppercase tracking-[0.25em] text-zinc-400">
-        Coastal Kitchen
-      </span>
+<header class="sticky top-0 z-50 w-full border-b border-zinc-200/80 dark:border-[#278440]/25 bg-white/90 dark:bg-[#060f09]/95 backdrop-blur-md transition-all duration-300">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2.5 sm:px-6 lg:px-8">
+    <!-- Brand Logo with Official Mascot Emblem -->
+    <a href="#" class="group flex items-center gap-3 focus:outline-none" aria-label="La Kera Restaurant Home">
+      <div class="relative flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border-2 border-[#278440] bg-[#278440] shadow-md shadow-[#278440]/25 overflow-hidden transition-transform group-hover:scale-105">
+        <img
+          src="/images/lakera-logo-square.png"
+          alt="La Kera Restaurant Logo"
+          class="h-full w-full object-cover"
+        />
+      </div>
+      <div class="flex flex-col">
+        <span class="font-serif text-2xl font-bold tracking-wider text-zinc-900 dark:text-white transition-all group-hover:text-[#278440] dark:group-hover:text-[#38b359] sm:text-3xl">
+          LA KERA
+        </span>
+        <span class="text-[9px] font-semibold uppercase tracking-[0.24em] text-[#278440] dark:text-[#38b359]">
+          The Real Taste of Kerala
+        </span>
+      </div>
     </a>
 
     <!-- Desktop Navigation Links -->
-    <nav class="hidden items-center gap-8 md:flex" aria-label="Primary Navigation">
-      <a href="#menu" class="text-sm font-medium text-zinc-300 transition-colors hover:text-amber-400">
-        Menu
+    <nav class="hidden items-center gap-7 lg:flex" aria-label="Primary Navigation">
+      <a href="#signatures" class="text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300 transition-colors hover:text-[#278440] dark:hover:text-[#38b359]">
+        Signatures
       </a>
-      <a href="#story" class="text-sm font-medium text-zinc-300 transition-colors hover:text-amber-400">
-        Our Story
+      <a href="#menu" class="text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300 transition-colors hover:text-[#278440] dark:hover:text-[#38b359]">
+        The Menu
       </a>
-      <a href="#location" class="text-sm font-medium text-zinc-300 transition-colors hover:text-amber-400">
-        Location
+      <a href="#story" class="text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300 transition-colors hover:text-[#278440] dark:hover:text-[#38b359]">
+        Our Heritage & Story
       </a>
-      <a href="#timings" class="text-sm font-medium text-zinc-300 transition-colors hover:text-amber-400">
-        Timings
+      <a href="#ambience" class="text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300 transition-colors hover:text-[#278440] dark:hover:text-[#38b359]">
+        Ambiance
+      </a>
+      <a href="#location" class="text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300 transition-colors hover:text-[#278440] dark:hover:text-[#38b359]">
+        Seegehalli, Bengaluru
       </a>
     </nav>
 
-    <!-- Header CTA -->
-    <div class="hidden items-center gap-4 sm:flex">
+    <!-- Header Delivery & Reservation CTAs + Theme Switcher -->
+    <div class="hidden items-center gap-2.5 sm:flex">
+      <!-- Theme Switcher Button -->
+      <button
+        type="button"
+        class="theme-toggle-btn inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-300 dark:border-[#278440]/40 bg-zinc-100 dark:bg-[#0c1910] text-zinc-700 dark:text-zinc-200 shadow-sm transition-all hover:scale-105 hover:border-[#278440] focus:outline-none"
+        aria-label="Toggle light or dark theme"
+        title="Switch theme"
+      >
+        <!-- Sun icon (visible in dark mode) -->
+        <svg class="h-4 w-4 hidden dark:block text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+        <!-- Moon icon (visible in light mode) -->
+        <svg class="h-4 w-4 block dark:hidden text-[#278440]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      </button>
+
+      <!-- Swiggy -->
+      <a
+        href={swiggyUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 rounded-full border border-orange-500/40 bg-orange-500/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-orange-600 dark:text-orange-400 transition-all hover:bg-orange-500 hover:text-white active:scale-95"
+        title="Order on Swiggy"
+      >
+        <SwiggyLogo class="h-4 w-4" />
+        <span>Swiggy</span>
+      </a>
+
+      <!-- Zomato -->
+      <a
+        href={zomatoUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 rounded-full border border-rose-500/40 bg-rose-500/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400 transition-all hover:bg-rose-600 hover:text-white active:scale-95"
+        title="Order on Zomato"
+      >
+        <ZomatoLogo class="h-4 w-4" />
+        <span>Zomato</span>
+      </a>
+
+      <!-- WhatsApp Reservation -->
       <a
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-xs font-semibold text-emerald-400 transition-all hover:border-emerald-500/60 hover:bg-emerald-500/20 active:scale-95"
+        class="inline-flex items-center gap-1.5 rounded-full border border-[#278440] bg-gradient-to-r from-[#278440] to-[#1e6933] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-md shadow-[#278440]/30 transition-all hover:brightness-110 active:scale-95"
       >
-        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.353.101.173.449.742.964 1.201.662.591 1.221.774 1.394.861.173.086.275.072.376-.044.101-.116.433-.506.549-.679.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.13.332.203.043.072.043.419-.101.824z"/>
-        </svg>
-        <span>Reserve a Table</span>
+        <WhatsAppLogo class="h-3.5 w-3.5" />
+        <span>Reserve</span>
       </a>
     </div>
 
-    <!-- Mobile Hamburger Button -->
-    <div class="flex items-center gap-2 md:hidden">
+    <!-- Mobile Hamburger & Actions Button -->
+    <div class="flex items-center gap-2 lg:hidden">
+      <!-- Mobile Theme Switcher -->
+      <button
+        type="button"
+        class="theme-toggle-btn inline-flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-300 dark:border-[#278440]/40 bg-zinc-100 dark:bg-[#0c1910] text-zinc-700 dark:text-zinc-200"
+        aria-label="Toggle light or dark theme"
+      >
+        <svg class="h-4 w-4 hidden dark:block text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+        <svg class="h-4 w-4 block dark:hidden text-[#278440]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      </button>
+
       <a
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center justify-center rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-2 text-emerald-400 hover:bg-emerald-500/20"
-        aria-label="Book a table via WhatsApp"
+        class="inline-flex items-center justify-center rounded-lg border border-[#278440]/60 bg-[#278440]/10 dark:bg-[#278440]/20 p-2 text-[#278440] dark:text-[#38b359]"
+        aria-label="Reserve a table on WhatsApp"
       >
-        <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.353.101.173.449.742.964 1.201.662.591 1.221.774 1.394.861.173.086.275.072.376-.044.101-.116.433-.506.549-.679.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.13.332.203.043.072.043.419-.101.824z"/>
-        </svg>
+        <WhatsAppLogo class="h-5 w-5" />
       </a>
 
       <button
         id="mobile-menu-button"
         type="button"
-        class="inline-flex items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900 p-2.5 text-zinc-300 hover:text-white focus:outline-none"
+        class="inline-flex items-center justify-center rounded-lg border border-zinc-300 dark:border-[#278440]/30 bg-zinc-100 dark:bg-[#0c1910] p-2 text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white focus:outline-none"
         aria-controls="mobile-menu"
         aria-expanded="false"
         aria-label="Toggle navigation menu"
@@ -79,27 +149,57 @@ const whatsappUrl = `https://wa.me/919500978712?text=${reservationText}`;
   </div>
 
   <!-- Mobile Drawer Menu -->
-  <div id="mobile-menu" class="hidden border-b border-zinc-800 bg-zinc-950/98 px-4 pt-2 pb-6 md:hidden">
+  <div id="mobile-menu" class="hidden border-b border-zinc-200 dark:border-[#278440]/20 bg-white/98 dark:bg-[#060f09]/98 px-5 pt-3 pb-8 lg:hidden">
     <div class="flex flex-col space-y-3 pt-2">
-      <a href="#menu" class="mobile-nav-link rounded-lg px-3 py-2.5 text-base font-medium text-zinc-200 hover:bg-zinc-900 hover:text-amber-400">
-        Menu
+      <a href="#signatures" class="mobile-nav-link rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-[#0c1910] hover:text-[#278440] dark:hover:text-[#38b359]">
+        Chef's Signatures
       </a>
-      <a href="#story" class="mobile-nav-link rounded-lg px-3 py-2.5 text-base font-medium text-zinc-200 hover:bg-zinc-900 hover:text-amber-400">
-        Our Story
+      <a href="#menu" class="mobile-nav-link rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-[#0c1910] hover:text-[#278440] dark:hover:text-[#38b359]">
+        The Full Menu
       </a>
-      <a href="#location" class="mobile-nav-link rounded-lg px-3 py-2.5 text-base font-medium text-zinc-200 hover:bg-zinc-900 hover:text-amber-400">
-        Location & Directions
+      <a href="#story" class="mobile-nav-link rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-[#0c1910] hover:text-[#278440] dark:hover:text-[#38b359]">
+        Our Heritage & Story
       </a>
-      <a href="#timings" class="mobile-nav-link rounded-lg px-3 py-2.5 text-base font-medium text-zinc-200 hover:bg-zinc-900 hover:text-amber-400">
-        Operating Timings
+      <a href="#ambience" class="mobile-nav-link rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-[#0c1910] hover:text-[#278440] dark:hover:text-[#38b359]">
+        Ambiance
       </a>
-      <div class="pt-3">
+      <a href="#location" class="mobile-nav-link rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-[#0c1910] hover:text-[#278440] dark:hover:text-[#38b359]">
+        Location: Seegehalli, Bengaluru
+      </a>
+
+      <!-- Mobile Delivery App Links with Official Logos -->
+      <div class="pt-3 border-t border-zinc-200 dark:border-zinc-800 flex flex-col gap-2.5">
+        <span class="text-[10px] uppercase font-bold tracking-wider text-zinc-500 dark:text-zinc-400">Order Online Delivery:</span>
+        <div class="grid grid-cols-2 gap-2">
+          <a
+            href={swiggyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 rounded-xl border border-orange-500/40 bg-orange-500/10 py-2.5 text-xs font-bold uppercase text-orange-600 dark:text-orange-400 hover:bg-orange-500 hover:text-white"
+          >
+            <SwiggyLogo class="h-4 w-4" />
+            <span>Swiggy</span>
+          </a>
+          <a
+            href={zomatoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 rounded-xl border border-rose-500/40 bg-rose-500/10 py-2.5 text-xs font-bold uppercase text-rose-600 dark:text-rose-400 hover:bg-rose-600 hover:text-white"
+          >
+            <ZomatoLogo class="h-4 w-4" />
+            <span>Zomato</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="pt-2">
         <a
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-950/50"
+          class="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#278440] via-[#2f9c4d] to-[#1e6933] py-3 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-[#278440]/30"
         >
+          <WhatsAppLogo class="h-4 w-4" />
           <span>Book a Table via WhatsApp</span>
         </a>
       </div>
@@ -132,4 +232,19 @@ const whatsappUrl = `https://wa.me/919500978712?text=${reservationText}`;
       });
     });
   }
+
+  // Dual Theme Toggle Handler
+  const toggleBtns = document.querySelectorAll('.theme-toggle-btn');
+  toggleBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      if (isDark) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('lakera-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('lakera-theme', 'dark');
+      }
+    });
+  });
 </script>

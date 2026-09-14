@@ -1,47 +1,84 @@
 ---
 import menuItems from '../data/menu.json';
+import WhatsAppLogo from './icons/WhatsAppLogo.astro';
+import SwiggyLogo from './icons/SwiggyLogo.astro';
+import ZomatoLogo from './icons/ZomatoLogo.astro';
 
 const categories = [
-  { id: 'all', label: 'All Items' },
+  { id: 'all', label: 'All Offerings' },
   { id: 'Coastal Seafood', label: 'Coastal Seafood' },
   { id: 'Biryani & Rice', label: 'Biryani & Rice' },
   { id: 'Grills & Curries', label: 'Grills & Curries' },
-  { id: 'Breads & Accompaniments', label: 'Breads & Accompaniments' },
-  { id: 'Desserts & Drinks', label: 'Desserts & Drinks' },
+  { id: 'Breads & Accompaniments', label: 'Breads & Hoppers' },
+  { id: 'Desserts & Drinks', label: 'Desserts & Refreshers' },
 ];
+
+const swiggyUrl = "https://www.swiggy.com/city/bangalore/erivum-puliyum-brookefields-aecs-layout-rest63059";
+const zomatoUrl = "https://www.zomato.com/bangalore/erivum-puliyum-brookefield-bangalore";
 
 function getWhatsAppOrderLink(name: string, price: number) {
   const text = encodeURIComponent(
-    `Hello La Kera! I'd like to order "${name}" (₹${price}). Please confirm availability and preparation time.`
+    `Hello La Kera! I'd like to order "${name}" (₹${price}) from your Seegehalli, Bengaluru kitchen. Please confirm availability.`
   );
   return `https://wa.me/919500978712?text=${text}`;
 }
 ---
 
-<section id="menu" class="scroll-mt-20 py-16 sm:py-24 border-t border-zinc-850">
+<section id="menu" class="scroll-mt-20 py-20 lg:py-28 bg-[#f8faf8] dark:bg-[#060f09] border-t border-zinc-200 dark:border-[#278440]/25 transition-colors duration-300">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <!-- Section Header -->
-    <div class="text-center">
-      <span class="text-xs font-semibold uppercase tracking-widest text-amber-500">Curated Offerings</span>
-      <h2 class="mt-2 font-serif text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-        The Coastal Menu
+    <div class="text-center max-w-3xl mx-auto">
+      <div class="inline-flex items-center gap-2 rounded-full border border-[#278440]/30 dark:border-[#278440]/50 bg-white/90 dark:bg-[#0c1910]/90 px-3 py-1 shadow-sm mb-3">
+        <img src="/images/lakera-logo-square.png" alt="La Kera Emblem" class="h-5 w-5 rounded-full object-cover border border-[#278440]" />
+        <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#1e6933] dark:text-[#38b359]">Authentic Coastal Kitchen</span>
+      </div>
+      <h2 class="mt-3 font-serif text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl lg:text-6xl">
+        The Coastal <span class="green-gradient-text italic font-normal">Dining Menu</span>
       </h2>
-      <p class="mx-auto mt-4 max-w-2xl text-pretty text-zinc-400 text-sm sm:text-base">
-        Slow-cooked delicacies prepared fresh on order using cold-pressed coconut oil, fresh coastal seafood, and hand-pounded spices.
+      <p class="mt-4 text-pretty text-zinc-600 dark:text-zinc-300 text-sm sm:text-base font-light">
+        Every dish is freshly prepared upon order. We never use pre-made gravies, artificial food colorings, or frozen seafood.
       </p>
+
+      <!-- Delivery Apps Callout Banner with Official Logos -->
+      <div class="mt-6 inline-flex flex-col sm:flex-row items-center justify-center gap-3 rounded-2xl border border-zinc-200 dark:border-[#278440]/30 bg-white/90 dark:bg-[#0c1910]/90 p-3 px-5 shadow-sm dark:shadow-lg">
+        <div class="flex items-center gap-2 text-xs text-zinc-700 dark:text-zinc-300">
+          <span class="rounded-full bg-[#278440]/10 dark:bg-[#278440]/20 border border-[#278440]/30 dark:border-[#278440]/50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#1e6933] dark:text-[#38b359]">Eco-Packaging</span>
+          <span>Doorstep delivery packed in leak-proof food containers:</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <a
+            href={swiggyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 rounded-full bg-[#fc8019] px-3 py-1 text-[11px] font-bold uppercase text-white shadow-sm hover:brightness-110 active:scale-95 transition-all"
+          >
+            <SwiggyLogo class="h-3.5 w-3.5" />
+            <span>Swiggy</span>
+          </a>
+          <a
+            href={zomatoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 rounded-full bg-[#e23744] px-3 py-1 text-[11px] font-bold uppercase text-white shadow-sm hover:brightness-110 active:scale-95 transition-all"
+          >
+            <ZomatoLogo class="h-3.5 w-3.5" />
+            <span>Zomato</span>
+          </a>
+        </div>
+      </div>
     </div>
 
     <!-- Category Filter Tabs & Veg Toggle -->
-    <div class="mt-10 flex flex-col items-center gap-4">
-      <!-- Tabs (horizontally scrollable on mobile) -->
+    <div class="mt-12 flex flex-col items-center gap-5">
+      <!-- Tabs (horizontally scrollable on mobile with smooth scroll) -->
       <div class="no-scrollbar flex w-full max-w-4xl items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-2 px-1">
         {categories.map((cat, idx) => (
           <button
             type="button"
-            class={`category-tab flex-shrink-0 rounded-full px-4 py-2 text-xs sm:text-sm font-medium transition-all ${
+            class={`category-tab flex-shrink-0 rounded-full px-5 py-2.5 text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all duration-200 ${
               idx === 0
-                ? 'active bg-amber-500 text-zinc-950 shadow-md font-semibold'
-                : 'bg-zinc-900/90 text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200 border border-zinc-800'
+                ? 'active bg-gradient-to-r from-[#278440] via-[#2f9c4d] to-[#1e6933] text-white shadow-md shadow-[#278440]/30'
+                : 'border border-zinc-200 dark:border-[#278440]/20 bg-white dark:bg-[#0c1910] text-zinc-600 dark:text-zinc-400 hover:border-[#278440]/40 hover:text-[#278440] dark:hover:text-zinc-200'
             }`}
             data-target-category={cat.id}
           >
@@ -50,90 +87,124 @@ function getWhatsAppOrderLink(name: string, price: number) {
         ))}
       </div>
 
-      <!-- Quick Veg Only Toggle -->
-      <label class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/80 px-3.5 py-1.5 text-xs text-zinc-300 select-none hover:border-zinc-700">
+      <!-- Quick Veg Only Switch -->
+      <label class="inline-flex cursor-pointer items-center gap-2.5 rounded-full border border-zinc-200 dark:border-[#278440]/30 bg-white/90 dark:bg-[#0c1910]/90 px-4 py-2 text-xs font-medium text-zinc-700 dark:text-zinc-300 select-none shadow-sm hover:border-[#278440]/60 transition-all">
         <input type="checkbox" id="veg-only-toggle" class="sr-only peer" />
-        <div class="relative h-4 w-7 rounded-full bg-zinc-700 peer peer-checked:bg-emerald-500 transition-colors after:absolute after:top-[2px] after:left-[2px] after:h-3 after:w-3 after:rounded-full after:bg-white after:transition-all peer-checked:after:translate-x-3"></div>
+        <div class="relative h-4 w-7 rounded-full bg-zinc-300 dark:bg-zinc-700 peer peer-checked:bg-[#278440] transition-colors after:absolute after:top-[2px] after:left-[2px] after:h-3 after:w-3 after:rounded-full after:bg-white after:transition-all peer-checked:after:translate-x-3"></div>
         <span class="flex items-center gap-1.5">
-          <span class="inline-flex h-3 w-3 items-center justify-center border border-emerald-500 p-[1px]">
-            <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+          <span class="inline-flex h-3.5 w-3.5 items-center justify-center rounded-[2px] border border-[#278440] bg-[#278440]/20 p-[1.5px]">
+            <span class="h-1.5 w-1.5 rounded-full bg-[#278440]"></span>
           </span>
-          <span>Veg Only</span>
+          <span class="tracking-wide">Vegetarian Selections Only</span>
         </span>
       </label>
     </div>
 
-    <!-- Menu Items Grid -->
-    <div id="menu-grid" class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6">
+    <!-- Menu Items Grid with Photo Cards -->
+    <div id="menu-grid" class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {menuItems.map((item) => (
         <article
-          class="menu-item group flex flex-col justify-between rounded-2xl border border-zinc-800/90 bg-zinc-900/70 p-5 backdrop-blur-sm transition-all duration-200 hover:-translate-y-1 hover:border-zinc-700 hover:bg-zinc-900 hover:shadow-xl"
+          class="menu-item card-luxury group flex flex-col justify-between overflow-hidden rounded-2xl transition-all duration-300"
           data-category={item.category}
           data-is-veg={item.isVeg ? 'true' : 'false'}
         >
-          <div>
-            <!-- Top bar: FSSAI Indicator & Badges -->
-            <div class="flex items-center justify-between gap-2">
-              <div class="flex items-center gap-2">
-                <!-- FSSAI Veg / Non-Veg Standard Dot Icon -->
+          <!-- Card Image Banner with Zoom Effect -->
+          <div class="relative h-48 w-full overflow-hidden bg-zinc-200 dark:bg-zinc-900">
+            <img
+              src={item.image}
+              alt={item.name}
+              class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30"></div>
+
+            <!-- FSSAI Indicator & Category Tag on Top of Image -->
+            <div class="absolute top-3 left-3 right-3 flex items-center justify-between">
+              <div class="flex items-center gap-1.5 rounded-full bg-black/70 backdrop-blur-md px-2.5 py-1 border border-white/10">
                 {item.isVeg ? (
-                  <span class="inline-flex h-4 w-4 items-center justify-center rounded-[2px] border border-emerald-500 bg-emerald-950/40 p-[2px]" title="Vegetarian">
-                    <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+                  <span class="inline-flex h-3.5 w-3.5 items-center justify-center rounded-[2px] border border-[#278440] bg-[#278440]/30 p-[1.5px]" title="Vegetarian">
+                    <span class="h-1.5 w-1.5 rounded-full bg-[#278440]"></span>
                   </span>
                 ) : (
-                  <span class="inline-flex h-4 w-4 items-center justify-center rounded-[2px] border border-rose-600 bg-rose-950/40 p-[2px]" title="Non-Vegetarian">
-                    <span class="h-2 w-2 rounded-full bg-rose-600"></span>
+                  <span class="inline-flex h-3.5 w-3.5 items-center justify-center rounded-[2px] border border-rose-600 bg-rose-950/60 p-[1.5px]" title="Non-Vegetarian">
+                    <span class="h-1.5 w-1.5 rounded-full bg-rose-600"></span>
                   </span>
                 )}
-                <span class="text-[11px] font-medium tracking-wide text-zinc-400">
+                <span class="text-[10px] font-semibold uppercase tracking-wider text-zinc-200">
                   {item.category}
                 </span>
               </div>
 
               {item.badge && (
-                <span class="rounded-md border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 text-[10px] font-semibold tracking-wide text-amber-300">
+                <span class="rounded-full border border-[#278440] bg-black/80 backdrop-blur-md px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#38b359]">
                   {item.badge}
                 </span>
               )}
             </div>
 
-            <!-- Item Name -->
-            <h3 class="mt-3 text-lg font-bold text-zinc-100 group-hover:text-amber-400 transition-colors">
-              {item.name}
-            </h3>
-
-            <!-- Item Description -->
-            <p class="mt-2 text-xs leading-relaxed text-zinc-400">
-              {item.desc}
-            </p>
+            <!-- Price on Image Corner -->
+            <div class="absolute bottom-3 right-3">
+              <span class="rounded-lg bg-black/80 backdrop-blur-md border border-[#278440]/50 px-3 py-1 font-mono text-base font-bold text-[#38b359]">
+                ₹{item.price}
+              </span>
+            </div>
           </div>
 
-          <!-- Bottom bar: Price & Quick WhatsApp Order CTA -->
-          <div class="mt-5 flex items-center justify-between border-t border-zinc-800/70 pt-4">
-            <span class="font-mono text-xl font-bold text-amber-400">
-              ₹{item.price}
-            </span>
+          <!-- Card Body Content -->
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-lg font-bold text-zinc-900 dark:text-white group-hover:text-[#278440] dark:group-hover:text-[#38b359] transition-colors leading-snug">
+                {item.name}
+              </h3>
 
-            <a
-              href={getWhatsAppOrderLink(item.name, item.price)}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/40 bg-emerald-500/10 px-3 py-1.5 text-xs font-semibold text-emerald-400 transition-all hover:border-emerald-500 hover:bg-emerald-500 hover:text-zinc-950 active:scale-95"
-              aria-label={`Quick Order ${item.name} via WhatsApp`}
-            >
-              <svg class="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.353.101.173.449.742.964 1.201.662.591 1.221.774 1.394.861.173.086.275.072.376-.044.101-.116.433-.506.549-.679.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.13.332.203.043.072.043.419-.101.824z"/>
-              </svg>
-              <span>Quick Order</span>
-            </a>
+              <p class="mt-2 text-xs leading-relaxed text-zinc-600 dark:text-zinc-400 font-light line-clamp-2">
+                {item.desc}
+              </p>
+
+              <!-- Tasting Tags -->
+              {item.tags && (
+                <div class="mt-3 flex flex-wrap gap-1.5">
+                  {item.tags.map((tag: string) => (
+                    <span class="rounded border border-zinc-200 dark:border-[#278440]/20 bg-zinc-100 dark:bg-[#060f09] px-2 py-0.5 text-[10px] font-medium text-zinc-600 dark:text-zinc-400">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <!-- Card Bottom Bar with Instant Order -->
+            <div class="mt-5 flex items-center justify-between border-t border-zinc-200 dark:border-[#278440]/20 pt-3.5">
+              <span class="text-xs text-zinc-500 dark:text-zinc-400">
+                Fresh on order
+              </span>
+
+              <a
+                href={getWhatsAppOrderLink(item.name, item.price)}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 rounded-lg border border-[#278440]/30 dark:border-[#278440] bg-[#278440]/10 dark:bg-[#278440]/20 px-3 py-1.5 text-xs font-semibold text-[#1e6933] dark:text-[#38b359] transition-all hover:bg-[#278440] hover:text-white active:scale-95 shadow-sm"
+                aria-label={`Quick Order ${item.name} via WhatsApp`}
+              >
+                <WhatsAppLogo class="h-3 w-3" />
+                <span>WhatsApp Order</span>
+              </a>
+            </div>
           </div>
         </article>
       ))}
     </div>
 
-    <!-- Empty state message if veg filter yields zero in a category -->
-    <div id="no-items-message" class="hidden py-12 text-center">
-      <p class="text-sm text-zinc-400">No dishes match the selected filter combination.</p>
+    <!-- Empty State -->
+    <div id="no-items-message" class="hidden py-16 text-center">
+      <p class="font-serif text-lg text-zinc-600 dark:text-zinc-400">No dishes match the selected filter combination.</p>
+      <button
+        id="reset-filter-btn"
+        type="button"
+        class="mt-4 inline-flex items-center rounded-full border border-[#278440]/40 px-4 py-2 text-xs font-semibold text-[#278440] dark:text-[#38b359] hover:bg-[#278440]/20"
+      >
+        Reset Filters
+      </button>
     </div>
   </div>
 </section>
@@ -144,13 +215,16 @@ function getWhatsAppOrderLink(name: string, price: number) {
     const items = document.querySelectorAll<HTMLElement>('.menu-item');
     const vegToggle = document.getElementById('veg-only-toggle') as HTMLInputElement | null;
     const noItemsMsg = document.getElementById('no-items-message');
+    const resetBtn = document.getElementById('reset-filter-btn');
 
     let currentCategory = 'all';
     let vegOnly = false;
 
+    const activeClasses = ['active', 'bg-gradient-to-r', 'from-[#278440]', 'via-[#2f9c4d]', 'to-[#1e6933]', 'text-white', 'shadow-md', 'shadow-[#278440]/30'];
+    const inactiveClasses = ['border', 'border-zinc-200', 'dark:border-[#278440]/20', 'bg-white', 'dark:bg-[#0c1910]', 'text-zinc-600', 'dark:text-zinc-400'];
+
     function filterItems() {
       let visibleCount = 0;
-
       items.forEach((item) => {
         const itemCategory = item.getAttribute('data-category');
         const itemIsVeg = item.getAttribute('data-is-veg') === 'true';
@@ -178,12 +252,12 @@ function getWhatsAppOrderLink(name: string, price: number) {
     tabs.forEach((tab) => {
       tab.addEventListener('click', () => {
         tabs.forEach((t) => {
-          t.classList.remove('active', 'bg-amber-500', 'text-zinc-950', 'shadow-md', 'font-semibold');
-          t.classList.add('bg-zinc-900/90', 'text-zinc-400', 'border', 'border-zinc-800');
+          t.classList.remove(...activeClasses);
+          t.classList.add(...inactiveClasses);
         });
 
-        tab.classList.add('active', 'bg-amber-500', 'text-zinc-950', 'shadow-md', 'font-semibold');
-        tab.classList.remove('bg-zinc-900/90', 'text-zinc-400', 'border', 'border-zinc-800');
+        tab.classList.remove(...inactiveClasses);
+        tab.classList.add(...activeClasses);
 
         currentCategory = tab.getAttribute('data-target-category') || 'all';
         filterItems();
@@ -196,8 +270,15 @@ function getWhatsAppOrderLink(name: string, price: number) {
         filterItems();
       });
     }
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        if (vegToggle) vegToggle.checked = false;
+        vegOnly = false;
+        if (tabs[0]) tabs[0].click();
+      });
+    }
   }
 
-  // Initialize filters
   setupMenuFilters();
 </script>

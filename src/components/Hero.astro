@@ -1,79 +1,149 @@
 ---
+import WhatsAppLogo from './icons/WhatsAppLogo.astro';
+import SwiggyLogo from './icons/SwiggyLogo.astro';
+import ZomatoLogo from './icons/ZomatoLogo.astro';
+
 const reservationText = encodeURIComponent(
-  "Hello La Kera! I'd like to reserve a table. Please let me know availability for [Date & Time] for [No. of Guests]."
+  "Hello La Kera! I'd like to reserve a table at your Seegehalli, Bengaluru restaurant."
 );
 const whatsappUrl = `https://wa.me/919500978712?text=${reservationText}`;
+const swiggyUrl = "https://www.swiggy.com/city/bangalore/erivum-puliyum-brookefields-aecs-layout-rest63059";
+const zomatoUrl = "https://www.zomato.com/bangalore/erivum-puliyum-brookefield-bangalore";
 ---
 
-<section class="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-28">
-  <!-- Ambient background glow effects -->
-  <div class="pointer-events-none absolute -top-24 left-1/2 -z-10 h-96 w-full -translate-x-1/2 max-w-4xl opacity-30 blur-3xl">
-    <div class="h-full w-full bg-gradient-to-tr from-amber-600/40 via-amber-500/20 to-emerald-600/30"></div>
+<section class="relative min-h-[92vh] flex items-center justify-center overflow-hidden py-16 sm:py-20 lg:py-28">
+  <!-- Atmospheric Background Image with Brand Foliage Vignette -->
+  <div class="absolute inset-0 -z-20 overflow-hidden">
+    <img
+      src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=85"
+      alt="La Kera Kerala Dining Ambiance"
+      class="h-full w-full object-cover object-center scale-105 filter brightness-[0.7] dark:brightness-[0.20] contrast-[1.1] dark:contrast-[1.2] transition-all duration-300"
+      fetchpriority="high"
+    />
+    <!-- Gradient Overlays for Readability & Depth in Light & Dark Mode -->
+    <div class="absolute inset-0 bg-gradient-to-b from-white/95 via-white/80 to-[#f8faf8] dark:from-[#060f09]/95 dark:via-[#060f09]/75 dark:to-[#060f09] transition-colors duration-300"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(248,250,248,0.7)_80%)] dark:bg-[radial-gradient(ellipse_at_center,transparent_0%,#060f09_80%)] transition-colors duration-300"></div>
   </div>
-  <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(#27272a_1px,transparent_1px)] [background-size:24px_24px] opacity-20"></div>
 
-  <div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-    <!-- Pulsating Status Badge -->
-    <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-950/40 px-3.5 py-1.5 text-xs font-medium text-emerald-300 shadow-sm backdrop-blur-sm sm:text-sm">
-      <span class="relative flex h-2 w-2">
-        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-        <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
-      </span>
-      <span>Open Daily • 11:30 AM – 11:00 PM</span>
+  <div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8 relative z-10">
+    <!-- Official Mascot Emblem Presentation -->
+    <div class="mx-auto mb-6 flex justify-center">
+      <div class="relative group">
+        <div class="absolute -inset-2 rounded-full bg-gradient-to-tr from-[#278440]/50 via-[#3A6CB4]/30 to-transparent blur-xl opacity-85 group-hover:opacity-100 transition-opacity"></div>
+        <div class="relative h-28 w-28 sm:h-36 sm:w-36 rounded-full border-2 border-[#278440] p-0.5 bg-[#278440] shadow-2xl shadow-[#278440]/40 overflow-hidden transition-transform group-hover:scale-105">
+          <img
+            src="/images/lakera-logo-square.png"
+            alt="La Kera Restaurant - The Real Taste of Kerala Mascot Emblem"
+            class="h-full w-full rounded-full object-cover"
+          />
+        </div>
+      </div>
     </div>
 
-    <!-- Main Headline -->
-    <h1 class="mt-6 text-balance font-serif text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-      Authentic <span class="bg-gradient-to-r from-amber-400 via-amber-200 to-amber-500 bg-clip-text text-transparent">Coastal & Malabar</span> Dining
+    <!-- Heritage Ribbon & Live Indicator -->
+    <div class="flex flex-wrap items-center justify-center gap-3">
+      <div class="inline-flex items-center gap-2 rounded-full border border-[#278440]/30 dark:border-[#278440]/50 bg-white/90 dark:bg-[#0c1910]/90 px-4 py-1.5 text-xs font-semibold tracking-wider text-[#1e6933] dark:text-[#38b359] shadow-sm backdrop-blur-md">
+        <span class="uppercase tracking-widest font-bold">The Real Taste of Kerala</span>
+        <span class="text-zinc-400 dark:text-zinc-600">•</span>
+        <span class="text-zinc-700 dark:text-zinc-300">Seegehalli, Bengaluru</span>
+      </div>
+
+      <div class="inline-flex items-center gap-2 rounded-full border border-[#3A6CB4]/30 dark:border-[#3A6CB4]/40 bg-blue-50/90 dark:bg-[#3A6CB4]/15 px-3.5 py-1.5 text-xs font-medium text-[#24529a] dark:text-[#7bb0ff] shadow-sm backdrop-blur-md">
+        <span class="relative flex h-2 w-2">
+          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#5289db] opacity-75"></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-[#3A6CB4]"></span>
+        </span>
+        <span>Open Daily • 11:30 AM – 11:00 PM</span>
+      </div>
+    </div>
+
+    <!-- Main Headline with Clean Display Typography -->
+    <h1 class="mt-6 font-serif text-4xl font-black tracking-tight text-zinc-900 dark:text-white sm:text-6xl md:text-7xl lg:text-8xl leading-[1.08]">
+      Authentic <span class="green-gradient-text italic font-normal">Kerala & Coastal</span> Dining
     </h1>
 
-    <!-- Descriptive Subtitle -->
-    <p class="mx-auto mt-6 max-w-2xl text-pretty text-base text-zinc-300 sm:text-lg md:text-xl">
-      Experience the soul of the Malabar coast. Fresh Arabian Sea catch, fragrant Kaima dum biryanis, cold-pressed coconut oil, and heirloom spices slow-cooked in traditional clay pots.
+    <!-- Elevated Subtitle -->
+    <p class="mx-auto mt-5 max-w-3xl text-pretty text-base text-zinc-700 dark:text-zinc-300 sm:text-lg md:text-xl font-light leading-relaxed">
+      Welcome to <strong class="text-zinc-900 dark:text-white font-medium">La Kera Restaurant</strong> at Seegehalli, Bengaluru. Slow-cooked coastal seafood, clay-pot meen curries, and fragrant Thalassery dum biryanis—served piping-hot with the authentic warmth of Kerala hospitality.
     </p>
 
-    <!-- Call to Actions -->
-    <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-5">
-      <a
-        href="#menu"
-        class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-amber-500 px-6 py-3.5 text-sm font-semibold text-zinc-950 shadow-lg shadow-amber-500/20 transition-all hover:bg-amber-400 hover:shadow-amber-500/30 active:scale-98 sm:w-auto sm:text-base"
-      >
-        <span>Explore Menu</span>
-        <svg class="h-4 w-4 transition-transform group-hover:translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-        </svg>
-      </a>
+    <!-- Social Proof Rating Pill -->
+    <div class="mt-5 flex items-center justify-center gap-1.5 text-xs font-medium text-zinc-600 dark:text-zinc-400">
+      <span class="flex text-[#cfa86e]">
+        ★ ★ ★ ★ ★
+      </span>
+      <span class="font-semibold text-zinc-800 dark:text-zinc-200">4.9 / 5</span>
+      <span class="text-zinc-400 dark:text-zinc-500">•</span>
+      <span class="text-zinc-600 dark:text-zinc-400">Over 1,400+ Happy Food Lovers in Bengaluru</span>
+    </div>
 
+    <!-- Primary Action Buttons -->
+    <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-5">
       <a
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex w-full items-center justify-center gap-2.5 rounded-xl border border-emerald-500/40 bg-zinc-900/90 px-6 py-3.5 text-sm font-semibold text-emerald-400 shadow-md backdrop-blur-sm transition-all hover:border-emerald-500 hover:bg-emerald-950/40 hover:text-emerald-300 active:scale-98 sm:w-auto sm:text-base"
+        class="inline-flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#278440] via-[#2f9c4d] to-[#1e6933] px-8 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-xl shadow-[#278440]/30 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#278440]/50 active:scale-95 sm:w-auto"
       >
-        <svg class="h-5 w-5 fill-emerald-400" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.353.101.173.449.742.964 1.201.662.591 1.221.774 1.394.861.173.086.275.072.376-.044.101-.116.433-.506.549-.679.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.13.332.203.043.072.043.419-.101.824z"/>
+        <WhatsAppLogo class="h-4 w-4" />
+        <span>Book Table via WhatsApp</span>
+      </a>
+
+      <a
+        href="#signatures"
+        class="inline-flex w-full items-center justify-center gap-2.5 rounded-full border border-[#3A6CB4]/40 dark:border-[#3A6CB4]/50 bg-white/90 dark:bg-[#0c1910]/80 px-8 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#24529a] dark:text-[#8cb8ff] shadow-sm backdrop-blur-md transition-all hover:border-[#3A6CB4] hover:bg-blue-50 dark:hover:bg-[#3A6CB4]/15 hover:text-[#1c3f76] dark:hover:text-white active:scale-95 sm:w-auto"
+      >
+        <span>Explore Signatures</span>
+        <svg class="h-4 w-4 text-[#3A6CB4] dark:text-[#5d93e6]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
         </svg>
-        <span>Book a Table via WhatsApp</span>
       </a>
     </div>
 
-    <!-- Quick Highlights Bar -->
-    <div class="mt-14 grid grid-cols-2 gap-3 border-t border-zinc-800/80 pt-8 sm:grid-cols-4 sm:gap-4">
-      <div class="flex flex-col items-center rounded-xl bg-zinc-900/60 p-3.5 border border-zinc-800/50">
-        <span class="text-xs uppercase font-medium text-zinc-400">Daily Catch</span>
-        <span class="mt-1 text-sm font-bold text-amber-400 sm:text-base">100% Fresh Sea Fish</span>
+    <!-- Quick Online Food Delivery Bar (Swiggy & Zomato) -->
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+      <span class="text-xs uppercase font-bold tracking-wider text-zinc-600 dark:text-zinc-400">Order Online Delivery:</span>
+      
+      <!-- Swiggy Button -->
+      <a
+        href={swiggyUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group inline-flex items-center gap-2 rounded-full border border-orange-500/40 dark:border-orange-500/50 bg-orange-50 dark:bg-[#fc8019]/15 px-5 py-2 text-xs font-bold uppercase tracking-wider text-orange-700 dark:text-orange-300 shadow-sm transition-all hover:scale-105 hover:bg-[#fc8019] hover:text-white active:scale-95"
+      >
+        <SwiggyLogo class="h-4 w-4 text-[#fc8019] group-hover:text-white transition-colors" />
+        <span>Order on Swiggy</span>
+      </a>
+
+      <!-- Zomato Button -->
+      <a
+        href={zomatoUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group inline-flex items-center gap-2 rounded-full border border-rose-500/40 dark:border-rose-500/50 bg-rose-50 dark:bg-[#e23744]/15 px-5 py-2 text-xs font-bold uppercase tracking-wider text-rose-700 dark:text-rose-300 shadow-sm transition-all hover:scale-105 hover:bg-[#e23744] hover:text-white active:scale-95"
+      >
+        <ZomatoLogo class="h-4 w-4 text-[#e23744] group-hover:text-white transition-colors" />
+        <span>Order on Zomato</span>
+      </a>
+    </div>
+
+    <!-- Heritage Highlights Banner with Mascot Cloche Motif -->
+    <div class="mt-14 grid grid-cols-2 gap-3 border-t border-zinc-200 dark:border-[#278440]/25 pt-8 sm:grid-cols-4 sm:gap-4">
+      <div class="card-luxury rounded-2xl p-4 text-center">
+        <span class="text-[11px] font-semibold uppercase tracking-wider text-[#278440] dark:text-[#38b359]">Steaming Fresh</span>
+        <p class="mt-1 font-serif text-base font-bold text-zinc-900 dark:text-white">Cloche to Table</p>
       </div>
-      <div class="flex flex-col items-center rounded-xl bg-zinc-900/60 p-3.5 border border-zinc-800/50">
-        <span class="text-xs uppercase font-medium text-zinc-400">Heirloom Recipes</span>
-        <span class="mt-1 text-sm font-bold text-amber-400 sm:text-base">Clay-Pot Cooking</span>
+      <div class="card-luxury rounded-2xl p-4 text-center">
+        <span class="text-[11px] font-semibold uppercase tracking-wider text-[#278440] dark:text-[#38b359]">Harbor Catch</span>
+        <p class="mt-1 font-serif text-base font-bold text-zinc-900 dark:text-white">100% Sea Fresh</p>
       </div>
-      <div class="flex flex-col items-center rounded-xl bg-zinc-900/60 p-3.5 border border-zinc-800/50">
-        <span class="text-xs uppercase font-medium text-zinc-400">Pure Ingredients</span>
-        <span class="mt-1 text-sm font-bold text-amber-400 sm:text-base">Cold-Pressed Oils</span>
+      <div class="card-luxury rounded-2xl p-4 text-center">
+        <span class="text-[11px] font-semibold uppercase tracking-wider text-[#278440] dark:text-[#38b359]">Manchatti</span>
+        <p class="mt-1 font-serif text-base font-bold text-zinc-900 dark:text-white">Clay-Pot Braised</p>
       </div>
-      <div class="flex flex-col items-center rounded-xl bg-zinc-900/60 p-3.5 border border-zinc-800/50">
-        <span class="text-xs uppercase font-medium text-zinc-400">Fast Ordering</span>
-        <span class="mt-1 text-sm font-bold text-emerald-400 sm:text-base">Instant WhatsApp Desk</span>
+      <div class="card-luxury rounded-2xl p-4 text-center">
+        <span class="text-[11px] font-semibold uppercase tracking-wider text-[#3A6CB4] dark:text-[#5d93e6]">Eco Packaging</span>
+        <p class="mt-1 font-serif text-base font-bold text-orange-600 dark:text-orange-400">Swiggy & Zomato</p>
       </div>
     </div>
   </div>
